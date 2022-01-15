@@ -40,7 +40,11 @@ input{
     margin: auto;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    padding: 100px;
+    display: grid;
+    grid-template: "slider" "gallery" "side";
+    margin-top: 200px;
+    column-gap: 10px;
+    margin-bottom: 100px;
 }
 .nav-wrapper{
     justify-content: center;
@@ -185,7 +189,7 @@ img {vertical-align: middle;}
     box-sizing: border-box;
 }
 body{
-    background: #333;
+    background: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -290,9 +294,20 @@ body{
 #slider_caption p{
     margin: 0;
 }
-
-
+.left-side-bar{
+    border-right: 1px solid black;
+    grid-area: left;
+    width: 300px;
+    height: 1300px; 
+}
+.right-side-bar{
+    border-left: 1px solid black;
+    grid-area: right;
+    width: 300px;
+    height: 1300px; 
+}
 .myGallery {
+    grid-area: center;
     display: grid;
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -352,8 +367,8 @@ body{
     position: relative;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    left: -100px;
-    width: 100vw;
+    left: 0px;
+    width: auto;
     margin-top: 20px;
     font-size: 1rem;
   }
@@ -496,6 +511,10 @@ body{
 	    -ms-flex-preferred-size: auto;
 	    flex-basis: auto;
 	}
+    .body{
+        grid-template:  "left center center right" "left center center right" "left center1 center1 right" "left center1 center1 right";
+
+    }
     
 }
 
@@ -530,6 +549,7 @@ body{
 		bottom: -25px;
 		left: -25px;
 	}
+
 }
 
 nav{
