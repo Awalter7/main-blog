@@ -63,7 +63,6 @@ input{
     height: auto;
     grid-template: "slider" "gallery" "side";
     column-gap: 10px;
-    margin-bottom: 100px;
 }
 .nav-wrapper{
     justify-content: center;
@@ -217,7 +216,7 @@ img {vertical-align: middle;}
     box-sizing: border-box;
 }
 body{
-    background: #292929;
+  background-color: #111111;
     text-align: center;
 }
 
@@ -421,9 +420,11 @@ body{
       padding: 20px;
       overflow-y: hidden;
       position: relative;
+      z-index:21;
       width: 100%;
-      height: 300px;
-      background-color:black;
+      top: 0px;
+      height: 500px;
+      background-color: rgb(34, 33, 33);
   }
   i {
 	margin-right: 10px;
@@ -435,7 +436,7 @@ body{
     margin-top: 10px;
     left: 250px;
 	padding: 15px;
-	color: rgb(0, 0, 0);
+	color: rgb(182, 182, 182);
 }
 .navbar-mainbg{
 	background-color: rgb(37, 36, 36);
@@ -560,49 +561,49 @@ nav{
     top: 0px;
 }
 #ftr-left{
-    background-color: black;
-    position: relative;
-    width: 30%;
-    float: left;
-    height: 100%;
+  background-color: rgb(34, 33, 33);
+  position: relative;
+  width: 30%;
+  float: left;
+  height: 100%;
 }
 #ftr-right{
-    background-color: black;
-    position: relative;
-    top: -100%;
-    width: 30%;
-    float: right;
-    height: 100%;
+  background-color: rgb(34, 33, 33);
+  position: relative;
+  top: -100%;
+  width: 30%;
+  float: right;
+  height: 100%;
 }
 #ftr-center{
-    color: rgba(255, 255, 255, 0.486);
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    background-color: rgb(0, 0, 0);
-    padding: 20px;
-    position: relative;
-    margin: auto;
-    width: 40%;
-    height: 100%;
+  background-color: rgb(34, 33, 33);
+  border-left: 1px solid rgb(71, 71, 71);
+  border-right: 1px solid rgb(71, 71, 71);
+  padding: 20px;
+  position: relative;
+  margin: auto;
+  width: 40%;
+  height: 100%;
 }
 #cntr-ftr-tittle{
-
-    background-color: rgb(0, 0, 0);
-    height: 50px;
+  font-family: 'Abril Fatface', cursive;
+  background-color: rgb(34, 33, 33);
+  height: 50px;
     width: auto;
 }
 #cntr-ftr-tittle h1{
-    position: relative;
-    color: white;
-    font-family: MywebFont;
-    font-size: 60px;
-    top: -20px;
+  position: relative;
+  color: white;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 60px;
+  top: -20px;
 }
 #cntr-ftr-content{
-    background-color: rgb(0, 0, 0);
-    padding: 20px;
-    height: 100%;
-    width: auto;
+  color: rgba(255, 255, 255, 0.39);
+  background-color: rgb(34, 33, 33);
+  padding: 20px;
+  height: 100%;
+  width: auto;
 }
 aside{
     background-color: rgb(37, 36, 36);
