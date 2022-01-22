@@ -14,17 +14,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <div class = "main-wrapper">
         <div class = "nav-wrapper">
+
             <div id = "nav-bar-top"> 
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white"></i>
                     </button>
+                    
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
+
                             <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Home</a>
@@ -44,130 +48,92 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
                             </li>
+                           
                         </ul>
+                        <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272" />
+                            <path
+                                  class="line bottom"
+                                  d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272" />
+                          </svg>
                     </div>
                 </nav>
             </div>
-            <div id = "search-br">
+            <div id = "search-br" class="no-stick">
                 <form class="d-flex input-group srch">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
-                        <span id = "srch-color">
-                            <span class="glyphicon glyphicon-search icon-search"></span>
-                        </span>
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <span class="input-group-text" id="search-addon">
+                        <span style="color: rgb(131, 127, 127)" class="glyphicon glyphicon-search icon-search"></span>
                     </span> 
                 </form>
-                <a class="navbar-brand navbar-logo" href="#">The Can of Mysteries</a>
             </div>  
-            <div  id = "nav-bottom-container">
-                <div id = "slide-text-box">
-                </div>
-                <div id="slider">
-                    <img src="img\image.jpeg" alt="Description 1" data-title="Title Slide 1" data-url="#">
-                    <img src="img\images.jpeg" alt="Description 2" data-title="Title Slide 2" data-url="#">
-                    <img src="img\purple-color-solid-background-1920x1080.png" alt="Description 3" data-title="Title Slide 3" data-url="#">
-                   
-                </div>
-
-            </div>
         </div>
-        <div class = "body">
 
+        <div class = "body">
+            <div id="header">
+                <h1>Can of Mysteries</h1>
+                <p>Read and search for creative articles that examin the many cases <br> mysterious tops that can all be found <a>at the mysterious contents</a> page. <br>  <span>Created and maintained by students.</span></p>
+                <span><br><i>Searching For:</i></Searching></span>
+            </div>
+            <aside id = "account">
+
+            </aside>
             <div id = "grid-text-box">
                 <span id = "text-descrip-grid"></span>
             </div>
-            <div class = "left-side-bar">
-                
-            </div>
+
             <div class = "right-side-bar">
-                
+                <h1>Archives</h1>
+                <br>
+                <ul>
+                    <li>test</li>
+                </ul>
             </div>
             <div class="myGallery">
                 <div class="item">
-                    <img src="https://picsum.photos/190/190?1" />
-                    <span class="caption">This is an image caption for image 1</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?2" />
-                    <span class="caption">This is an image caption for image 2</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?3" />
-                    <span class="caption">This is an image caption for image 3</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?4" />
-                    <span class="caption">This is an image caption for image 4</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?5" />
-                    <span class="caption">This is an image caption for image 5</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?6" />
-                    <span class="caption">This is an image caption for image 6</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?7" />
-                    <span class="caption">This is an image caption for image 7</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?8" />
-                    <span class="caption">This is an image caption for image 8</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?9" />
-                    <span class="caption">This is an image caption for image 9</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?10" />
-                    <span class="caption">This is an image caption for image 10</span>
-                </div>
-                <div class="item">
                     <img src="https://picsum.photos/190/190?11" />
-                    <span class="caption">This is an image caption for image 11</span>
-                </div>
-
-                <div class="item">
-                  <img src="https://picsum.photos/190/190?11" />
-                  <span class="caption">This is an image caption for image 11</span>
+                    <span class="author">Austin Walter</span>
+                    <span class="post-time">01.16.2022</span>
+                    <span class="caption">This is an Example Title</span>
+                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
                 </div>
                 <div class="item">
-                  <img src="https://picsum.photos/190/190?12" />
-                  <span class="caption">This is an image caption for image 12</span>
-                </div>
-                <div class="item">
-                  <img src="https://picsum.photos/190/190?13" />
-                  <span class="caption">This is an image caption for image 13</span>
-                </div>
-                <div class="item">
-                  <img src="https://picsum.photos/190/190?14" />
-                  <span class="caption">This is an image caption for image 14</span>
-                </div>
-                <div class="item">
-                  <img src="https://picsum.photos/190/190?15" />
-                  <span class="caption">This is an image caption for image 15</span>
-                </div>
-                <div class="item">
-                    <img src="https://picsum.photos/190/190?14" />
-                    <span class="caption">This is an image caption for image 16</span>
+                    <img src="https://picsum.photos/190/190?12" />
+                    <span class="author">Austin Walter</span>
+                    <span class="post-time">01.16.2022</span>
+                    <span class="caption">This is an Example Title</span>
+                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
                   </div>
                   <div class="item">
-                    <img src="https://picsum.photos/190/190?15" />
-                    <span class="caption">This is an image caption for image 17</span>
+                    <img src="https://picsum.photos/190/190?13" />
+                    <span class="author">Austin Walter</span>
+                    <span class="post-time">01.16.2022</span>
+                    <span class="caption">This is an Example Title</span>
+                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
                   </div>
                   <div class="item">
-                    <img src="https://picsum.photos/190/190?14" />
-                    <span class="caption">This is an image caption for image 18/span>
+                    <img src="https://picsum.photos/190/190?154" />
+                    <span class="author">Austin Walter</span>
+                    <span class="post-time">01.16.2022</span>
+                    <span class="caption">This is an Example Title</span>
+                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
                   </div>
                   <div class="item">
-                    <img src="https://picsum.photos/190/190?15" />
-                    <span class="caption">This is an image caption for image 19</span>
+                    <img src="https://picsum.photos/190/190?16" />
+                    <span class="author">Austin Walter</span>
+                    <span class="post-time">01.16.2022</span>
+                    <span class="caption">This is an Example Title</span>
+                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
                   </div>
-              </div>
             </div>
 
         </div>
+
         <div class = "footer-wrapper">
             <div id = "ftr-left">
 
@@ -191,11 +157,12 @@
         window.onscroll = function() {myFunction()};
         var navbar = document.getElementById("search-br");
         var sticky = navbar.offsetTop;
+
         function myFunction() {
         if (window.pageYOffset >= sticky) {
-            
-            navbar.classList.add("sticky")
             navbar.classList.remove("no-stick");
+            navbar.classList.add("sticky")
+            
         } else {
             navbar.classList.add("no-stick");
             navbar.classList.remove("sticky");
@@ -208,106 +175,27 @@
         let autoSlide;
         let autoSlidePlay = true;
 
-        addControls();
-        addCaptionArea();
-        slideTo(currentSlide);
-        resetAutoSlide();
-
-        function resetAutoSlide(){
-            if(autoSlidePlay){
-                clearInterval(autoSlide);
-                autoSlide = setInterval(() => { slideTo(increaseSlide(1)) }, 5000);
+        
+        var ham = document.querySelector(".ham");
+        ham.addEventListener("click", function(){
+            console.log();
+            if(window.getComputedStyle(document.getElementById("account"), null).width > "100px"){
+                $('#account').animate({width: 100}, {duration: 1000})
+                $('.form-control').animate({left: 100}, {duration: 1000})
+                $('#search-addon').animate({left: 140}, {duration: 1000})
+            }else{
+                $('#account').animate({width: 200}, {duration: 1000})
+                $('.form-control').animate({left: 200}, {duration: 1000})
+                $('#search-addon').animate({left: 240}, {duration: 1000})
             }
-        }
+            
+            
+        })
 
-        function startPause(){
-            let btn = document.getElementById('slider_startPause');
-            if (autoSlidePlay){
-                autoSlidePlay = false;
-                btn.className = 'far fa-play-circle'
-                clearInterval(autoSlide);
-            } else {
-                autoSlidePlay = true;
-                btn.className = 'far fa-pause-circle'
-                resetAutoSlide()
-            }
-        }
 
-        function addControls(){
-            //arrow Left
-            let arrowLeft = document.createElement('div');
-            arrowLeft.id = 'slider_arrow_left';
-            arrowLeft.innerHTML = '<i class="fas fa-angle-left"></i>';
-            arrowLeft.title = 'slide ' + (increaseSlide(-1) + 1);
-            arrowLeft.addEventListener("click", ()=> {
-                slideTo(increaseSlide(-1));
-                resetAutoSlide();
-            });
-            slider.append(arrowLeft);
-            //arrow Right
-            let arrowRight = document.createElement("div");
-            arrowRight.id = 'slider_arrow_right';
-            arrowRight.innerHTML = '<i class="fas fa-angle-right"></i>';
-            arrowRight.title = 'slide ' + (increaseSlide(1) + 1);
-            arrowRight.addEventListener("click", ()=>{
-                slideTo(increaseSlide(1));
-                resetAutoSlide();
-            })
-            slider.append(arrowRight);
-            //pause Button
-            let startPauseBtn = document.createElement("i");
-            startPauseBtn.id = 'slider_startPause';
-            startPauseBtn.className = 'far fa-pause-circle';
-            startPauseBtn.addEventListener("click", () => { startPause() });
-            slider.append(startPauseBtn);
-            //indicator dots
-            let indicators = document.createElement("div");
-            indicators.id= 'slider_indicators';
-            for(i = 0; i<slides.length; i++){
-                let nr = i;
-                let dot = document.createElement("i");
-                dot.className = "far fa-circle";
-                dot.addEventListener("click", ()=> {
-                    slideTo(nr);
-                    resetAutoSlide();
-                });
-                indicators.append(dot);
-            }
-            slider.append(indicators);
-            dots = indicators.children
-        }
 
-        function increaseSlide(nr){
-            if(nr>0 && currentSlide + nr >= slides.length) return 0
-            else if(nr<0 && currentSlide + nr < 0) return slides.length -1
-            else return currentSlide + nr
-        }
 
-        function slideTo(nr){
-            let from  = currentSlide *-100 + '%';
-            let to = nr * -100 + '%';
-            slides[0].animate(
-                { marginLeft: [from, to] }, 
-                { duration: 500, easing: "ease-in-out", iterations: 1, fill: "both" });
-            highlightIndicator(nr);
-            currentSlide = nr;
-            addCaptions();
-        }
 
-        function highlightIndicator(nr){
-            dots[currentSlide].className = "far fa-circle";
-            dots[nr].className = "far fa-dot-circle"
-        }
-
-        function addCaptionArea(){
-            let caption = document.createElement("a");
-            caption.id = "slider_caption";
-            let captionTitle = document.createElement("h1");
-            let captionDesc = document.createElement("p");
-            caption.append(captionTitle);
-            caption.append(captionDesc);
-            slider.append(caption);
-        }
 
         function addCaptions(){
             let link = document.getElementById('slider_caption');
@@ -370,6 +258,9 @@
             var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
             target.parent().addClass('active');
         });
+
+
+
     </script>
 </body>
 </html>
