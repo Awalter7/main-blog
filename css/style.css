@@ -53,7 +53,7 @@ input{
 .srch-color{
     width: 200px;
 }
-.body{
+.body-wrapper{
     margin: auto;
     position: relative;
     background-color: #111111;
@@ -219,7 +219,47 @@ body{
   background-color: #111111;
     text-align: center;
 }
-
+#circle {
+  width: 70px;
+  position: relative;
+  top: 15px;
+  left: 40px;
+  height: 70px;
+  background-image: url("https://th.bing.com/th/id/R.653f93c3cb58cb7f21b6a721ebdbec19?rik=dDXT3D3c%2bSRfNg&riu=http%3a%2f%2fwww.repol.copl.ulaval.ca%2fwp-content%2fuploads%2f2019%2f01%2fdefault-user-icon.jpg&ehk=5SV6bh5JXp3uM9swhors3LcaN1Iskv0xBV%2f7Hnq40s4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1");
+  background-size:contain;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+#username{
+  position: relative;
+  color: rgb(182, 182, 182);
+  top: 20px;
+}
+#acnt-container{
+  text-align: center;
+  position: relative;
+  top: 50px;
+  height: 120px;
+}
+#acnt-settings-cnt{
+  color: rgb(182, 182, 182);
+  text-align: center;
+  position: relative;
+  top: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+#sett-icon{
+  position: absolute;
+  top: 12px;
+  margin-left: -50px;
+}
+#acnt-settings-cnt span{
+  position: absolute;
+  margin-left: -20px;
+  top: 14px;
+}
 #header{
   padding-left:  20px;
   display: inline-block;
@@ -282,7 +322,32 @@ body{
     grid-row-gap: 52px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
   }
-  
+  .myGallery .item ul{
+    list-style: none;
+    
+  }  
+  #ArchiveList ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    border-width: 0;
+}
+  .myGallery .item ul li{
+    position: relative;
+    top: 218px;
+    left: -190px;
+    padding: 5px;
+    color: rgb(153, 151, 151);
+    box-shadow: 4px 2px 65px -4px rgba(0, 0, 0, 0.829);
+    -webkit-box-shadow: 4px 2px 65px -4px rgba(0, 0, 0, 0.87);
+    -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+    border: 1px solid rgb(71, 71, 71);
+    border-radius: 10px;
+    float: left;
+    margin-left: 10px;
+
+  }
   .myGallery img {
     transition: all .2s ease-in-out; 
     box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
@@ -515,7 +580,7 @@ body{
 	    -ms-flex-preferred-size: auto;
 	    flex-basis: auto;
 	}
-    .body{
+    .body-wrapper{
         grid-template:  "account search search search" "account slider slider blank" "account center center right" "account center center right" "account center1 center1 right" "account center1 center1 right";
 
     }
@@ -523,39 +588,7 @@ body{
 }
 
 
-@media (max-width: 991px){
-	#navbarSupportedContent ul li a{
-		padding: 12px 30px;
-	}
-	.hori-selector{
-        
-		margin-top: 0px;
-		margin-left: 10px;
-		border-radius: 0;
-		border-top-left-radius: 25px;
-		border-bottom-left-radius: 25px;
-	}
-	.hori-selector .left,
-	.hori-selector .right{
-		right: 10px;
-	}
-	.hori-selector .left{
-		top: -25px;
-		left: auto;
-	}
-	.hori-selector .right{
-		bottom: -25px;
-	}
-	.hori-selector .left:before{
-		left: -25px;
-		top: -25px;
-	}
-	.hori-selector .right:before{
-		bottom: -25px;
-		left: -25px;
-	}
 
-}
 nav{
     font-family: 'Roboto', sans-serif;
     top: 0px;
@@ -611,8 +644,7 @@ aside{
     top: -50px;
     grid-area: account ;
     z-index: 12;
-    width: 200px;
-
+    width: 150px;
 }
 #account{
     height: 107.9%;
