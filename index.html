@@ -54,7 +54,7 @@
                             </li>
                            
                         </ul>
-                        <button type="button" id="sign-in" class="login-with-google-btn" >
+                        <button type="button" id="sign-in" class="login-with-google-btn" data-onsuccess="onSignIn">
                             Sign in with Google
                           </button>
                         <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
@@ -251,6 +251,19 @@
             console.log(e)
         })
         }
+
+        function onSignIn(googleUser){
+            var profile = GoogleUser.getBasicProfile();
+            console.log('User is' + JSON.stringify(profile));
+
+            var element = document.querySelector("#username");
+            element.innerText = profile.getName();
+
+            var image = document.createElement('img')
+            image.setAttribute('src', profile.getImageUrl());
+            element.append(image)
+        }
+
         window.onscroll = function() {myFunction()};
 
         var navbar = document.getElementById("search-br");
