@@ -19,6 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
     <div class = "main-wrapper">
@@ -54,9 +55,7 @@
                             </li>
                            
                         </ul>
-                        <button type="button" id="sign-in" class="login-with-google-btn">
-                            Sign in with Google
-                          </button>
+
                         <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
                             <path
