@@ -254,7 +254,8 @@
          var element = document.querySelector('#username')
          element.innerText = profile.getName();
 
-        var imageUrl = "url(" + profile.getImageUrl +")";
+        var imageUrl = "url('" + profile.getImageUrl() +"')";
+        console.log(imageUrl)
         document.getElementById("circle").style.backgroundImage = imageUrl
 
       }
