@@ -225,19 +225,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script type = "module">
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyCFUz4czbiLnuA7M7TBVX-iECvKutd8emY",
-            authDomain: "main-blog-17ac9.firebaseapp.com",
-            projectId: "main-blog-17ac9",
-            storageBucket: "main-blog-17ac9.appspot.com",
-            messagingSenderId: "188291999968",
-            appId: "1:188291999968:web:0a0a6547af55693f270885",
-            measurementId: "G-N1ZFZZ7BQT"
-        };
-        firebase.initializeApp(firebaseConfig);
-
-        
-        let provider = new firebase.auth.GoogleAuthProvider()
 
         function onSuccess(googleUser) {
          console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
