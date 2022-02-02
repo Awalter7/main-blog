@@ -254,8 +254,9 @@
          var element = document.querySelector('#username')
          element.innerText = profile.getName();
 
-        var image = document.getElementById('circle')
-        image.setAttribute('src', profile.getImageUrl());
+        var imageUrl = "url(" + profile.getImageUrl +")";
+        document.getElementById("circle").style.backgroundImage = imageUrl
+
       }
         window.onscroll = function() {myFunction()};
 
