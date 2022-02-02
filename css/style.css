@@ -320,7 +320,7 @@ body{
     display: grid;
     grid-gap: 52px;
     grid-row-gap: 52px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   .myGallery .item ul{
     list-style: none;
@@ -353,16 +353,17 @@ body{
     box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
     -webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
-    width: 130%;
-    height: 40%
+    width: 100px;
+    height: 40%;
   }
   .myGallery img:hover{
     transform: scale(1.1);
   }
   .myGallery .item {
+    margin: 0 auto ; 
     box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
--webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
--moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
     background-color: rgba(227, 233, 233, 0.068);
     z-index: 0;
     padding: 20px;
@@ -375,7 +376,7 @@ body{
   }
   .myGallery .item img {
     float: left;
-    width: 300px;
+    width: 360px;
     height: 200px;
     vertical-align: middle;
   }
@@ -587,7 +588,7 @@ body{
     }
     
 }
-@media(min-width: 1300px){
+@media(min-width: 900px){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
@@ -608,7 +609,7 @@ body{
 	    flex-basis: auto;
 	}
   .myGallery .item {
-    width: 350px;
+    width: 400px;
     height: 500px;
   }
   .myGallery .item ul li{
@@ -627,13 +628,28 @@ body{
   left: 9px;
   top: 290px;
 }
+
     .body-wrapper{
         grid-template:  "account search search search" "account slider slider blank" "account center center right" "account center center right" "account center1 center1 right" "account center1 center1 right";
 
     }
     
-}
-
+  }
+  @media(min-width: 1100px) {
+    .myGallery{
+      grid-column-gap: 50px;
+      left: 9px;
+      top: 0px;
+    }
+  }
+  @media(min-width: 1200px) {
+    .myGallery{
+      position: relative;
+      grid-column-gap: 50px;
+      left: 9px;
+      top: 0px;
+    }
+  }
 
 nav{
     font-family: 'Roboto', sans-serif;
