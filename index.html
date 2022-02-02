@@ -19,8 +19,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
-    <meta name="google-signin-client_id" content="HWgo7WVhQrWqbjFit4Zqy6Gj7Bu2.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="AIzaSyCFUz4czbiLnuA7M7TBVX-iECvKutd8emY.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </head>
 <body>
     <div class = "main-wrapper">
@@ -56,8 +56,7 @@
                             </li>
                            
                         </ul>
-
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div id="my-signin2"></div>
                         <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
                             <path
                                   class="line top"
@@ -241,30 +240,23 @@
         
         let provider = new firebase.auth.GoogleAuthProvider()
 
-        function GoogleLogin(){
-        console.log('Login Btn Call')
-        firebase.auth().signInWithPopup(provider).then(res=>{
-            console.log(res.user)
-            document.getElementById('LoginScreen').style.display="none"
-            document.getElementById('dashboard').style.display="block"
-            showUserDetails(res.user)
-        }).catch(e=>{
-            console.log(e)
-        })
+        function onSuccess(googleUser) {
+         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
         }
-
-        function onSignIn(googleUser){
-            var profile = GoogleUser.getBasicProfile();
-            console.log('User is' + JSON.stringify(profile));
-
-            var element = document.querySelector("#username");
-            element.innerText = profile.getName();
-
-            var image = document.createElement('img')
-            image.setAttribute('src', profile.getImageUrl());
-            element.append(image)
+        function onFailure(error) {
+        console.log(error);
         }
-
+        function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+        }
         window.onscroll = function() {myFunction()};
 
         var navbar = document.getElementById("search-br");
