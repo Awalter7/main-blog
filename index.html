@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
 </head>
 <body>
     <div class = "main-wrapper">
@@ -51,6 +54,9 @@
                             </li>
                            
                         </ul>
+                        <button type="button" id="sign-in" class="login-with-google-btn" >
+                            Sign in with Google
+                          </button>
                         <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
                             <path
                                   class="line top"
@@ -215,9 +221,38 @@
             
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script type = "module">
 
-    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCFUz4czbiLnuA7M7TBVX-iECvKutd8emY",
+            authDomain: "main-blog-17ac9.firebaseapp.com",
+            projectId: "main-blog-17ac9",
+            storageBucket: "main-blog-17ac9.appspot.com",
+            messagingSenderId: "188291999968",
+            appId: "1:188291999968:web:0a0a6547af55693f270885",
+            measurementId: "G-N1ZFZZ7BQT"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        var signInGoogle = document.getElementById("sign-in");
+        signInGoogle.addEventListener("click", GoogleLogin);
+        
+        let provider = new firebase.auth.GoogleAuthProvider()
+
+        function GoogleLogin(){
+        console.log('Login Btn Call')
+        firebase.auth().signInWithPopup(provider).then(res=>{
+            console.log(res.user)
+            document.getElementById('LoginScreen').style.display="none"
+            document.getElementById('dashboard').style.display="block"
+            showUserDetails(res.user)
+        }).catch(e=>{
+            console.log(e)
+        })
+        }
         window.onscroll = function() {myFunction()};
+
         var navbar = document.getElementById("search-br");
         var sticky = navbar.offsetTop;
 
@@ -261,17 +296,9 @@
                 $('#account i').css("fontSize", "25px")
                 $('#username').fadeIn();
                 $('#settings').fadeIn();
-                $('#acnt-container').animate({height: 120}, {duration: 500});
-                
-                
-            }
-            
-            
+                $('#acnt-container').animate({height: 120}, {duration: 500});   
+            }            
         })
-
-
-
-
 
 
         function addCaptions(){
@@ -335,9 +362,6 @@
             var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
             target.parent().addClass('active');
         });
-
-
-
     </script>
 </body>
 </html>
