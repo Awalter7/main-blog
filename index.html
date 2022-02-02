@@ -242,6 +242,14 @@
 
         function onSuccess(googleUser) {
          console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+         var profile = googleUser.getBasicProfile()
+
+         var element = document.querySelector('#username')
+         element.innerText = profile.getName();
+
+         var image = document.getElementById('circle')
+         image.setAttribute('src', googleUser.getImageUrl());
+         element.append(image);
         }
         function onFailure(error) {
         console.log(error);
