@@ -231,26 +231,6 @@
     <script>
 
 
-        function onSuccess(googleUser) {
-         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-         var profile = googleUser.getBasicProfile()
-
-         var element = document.querySelector('#username')
-         element.innerText = profile.getName();
-
-         var image = document.getElementById('circle')
-         image.setAttribute('src', googleUser.getImageUrl());
-         element.append(image);
-         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-                            var profile = googleUser.getBasicProfile()
-
-                            var element = document.querySelector('#username')
-                            element.innerText = profile.getName();
-
-                            var image = document.getElementById('circle')
-                            image.setAttribute('src', googleUser.getImageUrl());
-                            element.append(image);
-        }
         function onFailure(error) {
         console.log(error);
         }
@@ -267,6 +247,16 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+         var profile = googleUser.getBasicProfile()
+
+         var element = document.querySelector('#username')
+         element.innerText = profile.getName();
+
+        var image = document.getElementById('circle')
+        image.setAttribute('src', googleUser.getImageUrl());
+        element.append(image);
       }
         window.onscroll = function() {myFunction()};
 
