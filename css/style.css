@@ -250,7 +250,20 @@ body{
   height: 50px;
   overflow: hidden;
 }
+#acnt-upload-cnt{
+  color: rgb(182, 182, 182);
+  text-align: center;
+  position: relative;
+  top: 50px;
+  height: 50px;
+  overflow: hidden;
+}
 #sett-icon{
+  position: absolute;
+  top: 12px;
+  margin-left: -50px;
+}
+#Upload-icon{
   position: absolute;
   top: 12px;
   margin-left: -50px;
@@ -259,6 +272,14 @@ body{
   position: absolute;
   margin-left: -20px;
   top: 14px;
+}
+#acnt-upload-cnt span{
+  position: absolute;
+  margin-left: -20px;
+  top: 14px;
+}
+#acnt-upload-cnt i{
+  font-size: 20px;
 }
 #header{
   padding-left:  20px;
@@ -848,3 +869,10 @@ aside{
     cursor: not-allowed;
   }
   
+.article-upload{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background:conic-gradient(from 90deg at 50% 50%, rgba(255, 88, 88, 0.336) 0%, rgba(255, 192, 98, 0.336) 7%, rgba(255, 228, 94, 0.336) 14%, rgba(164, 253, 90, 0.336) 29%, rgba(90, 255, 157, 0.336) 37%, rgba(91, 255, 199, 0.336) 44%, rgba(92, 253, 255, 0.336) 49%, rgba(86, 173, 255, 0.336) 55%, rgba(89, 127, 255, 0.336) 65%, rgba(112, 89, 255, 0.336) 71%, rgba(145, 85, 255, 0.336) 78%, rgba(145, 90, 255, 0.336) 84%, rgba(214, 94, 255,  0.336) 89%, rgba(255, 70, 195, 0.336) 94%, rgba(255, 86, 91, 0.336) 100%);
+  z-index: 30;
+}

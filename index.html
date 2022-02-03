@@ -25,8 +25,16 @@
 </head>
 <body>
     <div class = "main-wrapper">
-        <div class = "nav-wrapper">
 
+        <div class = "article-upload">
+            <div style="background-color: rgb(49, 49, 49); height: 70%; width: 70%; margin: 0% auto; margin-top: 7%; box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);">
+                <a><i class="material-icons" style="font-size:36px; float:right;" onclick="toggleArticleUpload()">highlight_off</i></a>
+            </div>
+            
+        </div>
+        <div class = "nav-wrapper">
             <div id = "nav-bar-top"> 
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,8 +112,16 @@
                     <span id="username">Austin Walter</span>
                 </div>
                 <div id = "acnt-settings-cnt">
+                    <a>
                     <i id="sett-icon" class="material-icons">settings</i>
                     <span id="settings">Settings</span>
+                    </a>
+                </div>
+                <div id = "acnt-upload-cnt">
+                    <a href="" onclick="openArticleUpload()">
+                    <i id="Upload-icon" class="glyphicon glyphicon-upload"></i>
+                    <span id="upload">Upload</span>
+                    </a>
                 </div>
             </aside>
             <div id = "grid-text-box">
@@ -296,7 +312,8 @@
                 $('#circle').animate({left: 15}, {duration: 500});
                 $('#username').fadeOut();
                 $('#settings').fadeOut();
-                $('#account i').css("fontSize", "35px")
+                $('#upload').fadeOut();
+                $('#account i').css("fontSize", "30px")
                 $('#account i').animate({left: 83}, {duration: 500});
                 $('#acnt-container').animate({height: 100}, {duration: 500});
             }else{
@@ -305,9 +322,10 @@
                 $('#search-addon').animate({left: 190}, {duration: 500});
                 $('#circle').animate({left: 40}, {duration: 500});
                 $('#account i').animate({left: 75}, {duration: 500});
-                $('#account i').css("fontSize", "25px")
+                $('#account i').css("fontSize", "20px")
                 $('#username').fadeIn();
                 $('#settings').fadeIn();
+                $('#upload').fadeIn();
                 $('#acnt-container').animate({height: 120}, {duration: 500});   
             }            
         })
@@ -363,6 +381,10 @@
             setTimeout(function(){ test(); });
         });
 
+        function toggleArticleUpload(){
+            console.log("test")
+            $('.article-upload').fadeToggle();
+        }
 
         jQuery(document).ready(function($){
 
