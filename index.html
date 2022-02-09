@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="1.1">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
@@ -25,14 +26,20 @@
 </head>
 <body>
     <div class = "main-wrapper">
-
-        <div class = "article-upload">
-            <div style="background-color: rgb(49, 49, 49); height: 70%; width: 70%; margin: 0% auto; margin-top: 7%; box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);
-            -webkit-box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);
-            -moz-box-shadow: 2px 5px 49px -22px rgba(0,0,0,0.75);">
-                <a><i class="material-icons" style="font-size:36px; float:right;" onclick="toggleArticleUpload()">highlight_off</i></a>
-            </div>
+        <div class = "up-container">
             
+            <div class = "up-form-wrapper">
+                <h1>Article Upload</h1>
+                <i class="fa fa-close" style="font-size:24px" onclick="toggleArticleUpload()"></i>
+                <form action="">
+                    <form class="form-inline">
+                        <div class="form-group mb-2">
+                            <label for="staticEmail2" class="sr-only">Email</label>
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                        </div>
+                    </form>
+                </form>
+            </div>
         </div>
         <div class = "nav-wrapper">
             <div id = "nav-bar-top"> 
@@ -383,7 +390,7 @@
 
         function toggleArticleUpload(){
             console.log("test")
-            $('.article-upload').fadeToggle();
+            $('.up-container').fadeToggle();
         }
 
         jQuery(document).ready(function($){
