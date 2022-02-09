@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+a{
+  color: #aaa;
+}
+
 @font-face {font-family: "MyWebFont"; src: url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.eot"); src: url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.woff") format("woff"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.svg#MysteryEF") format("svg"); }
 @font-face {font-family: "MyWebFont2"; src: url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.eot"); src: url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.woff") format("woff"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.svg#MysteryEF") format("svg"); }
 .form-control::placeholder {
@@ -946,13 +950,13 @@ Article h1{
   font-family: 'Abril Fatface', cursive;
   font-size: 60px;
   margin: 0 auto;
-  left: 5%;
+  left: 13%;
 }
 h1 span{
   font-size: 20px;
   position: relative;
-  top: 20px;
-  left: -100px;
+  top: 30px;
+  left: -380px;
 }
 p{
   color: #757575;
@@ -977,6 +981,7 @@ p{
   font-size: 17px;
   overflow: hidden;
   padding: 10px;
+  padding-top: 20px;
   text-align: left;
   height: fit-content;
 }
@@ -988,6 +993,15 @@ p{
 }
 #article-body-three{
   grid-area: body3;
+}
+#img-caption{
+  position: relative;
+  top: 10px;
+  float: left;
+  width: 70%;
+  margin-left: 15%;
+  height: 30px;
+  border: 1px solid #757575
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 *,
