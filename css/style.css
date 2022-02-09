@@ -102,15 +102,6 @@ input{
     width: 100px;
     height: 200px; 
 }
-#nav-tittle-container{
-   
-  font-family: myFirstFont;
-    margin: auto;
-    width: 40%;
-    margin-top: 50px;
-    height: 150px;
-    background-color: rgb(42, 140, 165);
-}
 #nav-text-container{
     font-family: 'Oswald', sans-serif;
     position: relative;
@@ -217,6 +208,9 @@ img {vertical-align: middle;}
     box-sizing: border-box;
 }
 body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
   background-color: #111111;
     text-align: center;
 }
@@ -501,14 +495,15 @@ body{
   .myGallery {
     position: relative;
     left: 0px;
-    width: auto;
+    width: fit-content;
+    height:fit-content;
     margin-top: 20px;
     font-size: 1rem;
   }
   .footer-wrapper{
       padding: 20px;
       overflow-y: hidden;
-      position: relative;
+      grid-area: footer;
       z-index:21;
       width: 100%;
       top: 0px;
@@ -632,7 +627,12 @@ body{
 	    flex-basis: auto;
 	}
     .body-wrapper{
-        grid-template:  "account search search search" "account slider slider blank" "account center center right" "account center center right" "account center1 center1 right" "account center1 center1 right";
+        grid-template:  "account search search search" 
+        "account slider slider blank"
+         "account center center right" 
+         "account center center right" 
+         "account center1 center1 right" 
+         "account center1 center1 right";
 
     }
     
@@ -685,7 +685,14 @@ body{
 }
 
     .body-wrapper{
-        grid-template:  "account search search search" "account slider slider blank" "account center center right" "account center center right" "account center1 center1 right" "account center1 center1 right";
+        grid-template:  
+        "account search search search" 
+        "account slider slider blank" 
+        "account center center right" 
+        "account center center right" 
+        "account center center right"
+        "account center center right"
+        "footer footer footer footer";
 
     }
     .no-stick{
@@ -874,7 +881,6 @@ aside{
   position: fixed;
   width: 100%;
   height: 100%;
-  
   z-index: 30;
 }
 .container {
@@ -920,4 +926,180 @@ aside{
   position: relative;
   color: #757575;
   float: right;
+}
+Article{
+  background-color: #111111;
+  color: #757575;
+  height: 100%;
+  z-index: 1;
+  display: grid;
+  height: fit-content;
+  grid-template-areas: "tittle tittle" "image1 body1" "body2 body2" "body3 image2";
+  grid-area: center;
+  grid-template-rows: minmax(100px, max-content);
+  grid-template-columns: 50%;
+  padding: 50px;
+}
+Article h1{
+  grid-area: tittle;
+  position: relative;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 60px;
+  margin: 0 auto;
+  left: 5%;
+}
+h1 span{
+  font-size: 20px;
+  position: relative;
+  top: 20px;
+  left: -100px;
+}
+p{
+  color: #757575;
+}
+#article-image1, #article-image2{
+  margin-top: 20px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+#article-image1{
+  grid-area: image1;
+}
+#article-image2{
+  grid-area: image2;
+}
+#article-image1 img, #article-image2 img{
+  width: 70%;
+}
+#article-body-one,
+#article-body-two,
+#article-body-three{
+  font-size: 17px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: left;
+  height: fit-content;
+}
+#article-body-one{
+  grid-area: body1;
+}
+#article-body-two{
+  grid-area: body2;
+}
+#article-body-three{
+  grid-area: body3;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.back {
+  position: relative;
+  color: #757575;
+  top: 30px;
+  margin-left: 90%;
+  background: none;
+  border: 0;
+  grid-area: tittle;
+  height: 60px;
+  width: 60px;
+}
+
+.top-left,
+.top-right,
+.bottom-left,
+.bottom-right,
+.stalk {
+  display: block;
+  position: absolute;
+  height: 0.2rem;
+  width: 1.3rem;
+  background: #757575;
+  border-radius: 0.2rem;
+  z-index: 2;
+  opacity: 1;
+  left: 50%;
+}
+
+.top-left {
+  transform: rotate(45deg);
+  top: 2.4rem;
+}
+
+.top-right {
+  transform: rotate(135deg);
+  top: 2.4rem;
+}
+
+.bottom-left {
+  transform: rotate(135deg);
+  top: 3.2rem;
+}
+
+.bottom-right {
+  transform: rotate(45deg);
+  top: 3.2rem;
+}
+
+.top-left,
+.bottom-left {
+  margin-left: -1rem;
+}
+
+.top-right,
+.bottom-right {
+  margin-left: -0.2rem;
+}
+
+.stalk {
+  top: 2.8rem;
+  width: 2rem;
+  opacity: 0;
+}
+
+.text {
+  color: #757575;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  bottom: 0.1rem;
+  left: 40%;
+  top: 35px;
+  margin-left: -1.7rem;
+  opacity: 0;
+}
+
+.back .top-left, .back .bottom-left {
+  transition: opacity 0.3s 1s;
+}
+.back .top-right, .back .bottom-right {
+  transition: margin-left 0.5s 0.5s;
+}
+.back .stalk {
+  transition: margin-left 0.5s 0.5s, opacity 0.3s 1s;
+}
+.back .text {
+  transition: opacity 0.3s 1s;
+}
+.back:hover .text {
+  opacity: 1;
+  transition: opacity 0.3s 0.5s;
+}
+.back:hover .top-left, .back:hover .bottom-left {
+  opacity: 0;
+  transition: opacity 0.3s 0.5s;
+}
+.back:hover .top-right, .back:hover .bottom-right {
+  margin-left: -1.3rem;
+  transition: margin-left 0.5s 0.8s;
+}
+.back:hover .stalk {
+  opacity: 1;
+  margin-left: -1.2rem;
+  transition: margin-left 0.5s 0.8s, opacity 0.3s 0.5s;
 }
