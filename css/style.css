@@ -511,7 +511,7 @@ body{
       padding: 20px;
       overflow-y: hidden;
       grid-area: footer;
-      z-index:21;
+      z-index:42;
       width: 100%;
       top: 0px;
       height: 500px;
