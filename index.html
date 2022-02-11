@@ -110,7 +110,7 @@
             <div id="header">
                 <h1 id = "header-title">Can of Mysteries</h1>
                 <p>Read and search for creative articles that examin the many cases <br> mysterious topics that can all be found <a>in the mysterious contents</a> page. <br>  <span>Created and maintained by USCA teachers and students.</span></p>
-                <span><br><i>Searching For:</i></Searching></span>
+                <span><br><i>Searching For:</i></span>
             </div>
             <aside id = "account">
                 <div id = acnt-container>
@@ -208,8 +208,11 @@
     </div>
     <div class = "pre-loader">
         <div id = "welcome-message">
+
             <h1 id = "welcome-message-h1">Can of Mysteries</h1>
-            <h2 id = "pre-loader-counter"></h2>
+            <p id = "pre-loader-Text">We sometimes forget, in our day to day lives, that the world is a very unusual place, and the people in it are sometimes even more unusual.</p>
+            <div id = "pre-loader-author"><i>Developed By:</i> Austin Walter</div>
+
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
@@ -241,34 +244,41 @@
             var tween = gsap.to("#account", {duration: 2, y:-1150});
             tween.play();
 
-            var tween = gsap.to("#welcome-message-h1", {duration: 2, y:-293});
-            tween.play();
 
-            setTimeout(animateHeadLftPos, 2000)
-            setTimeout(preLoaderFadeout, 4000)
+            setTimeout(animateHeadTopPos, 1000)
+            setTimeout(animateHeadLftPos, 3000)
+            setTimeout(preLoaderFadeout, 5000)
 
 
         }
         function preLoaderFadeout(){
             $(".pre-loader").fadeOut();
-                        $('body').css('overflow', "scroll");
+            $('body').css('overflow', "scroll");
             $('body').css('overflow-x', "hidden");
         }
+        function animateHeadTopPos(){
+            var tittle = $('#header-title').last();
+            var offsetTittle = tittle.offset();
+            var message = $('#welcome-message-h1').last();
+            var offsetMessage = message.offset();
+
+
+            var offsetFinalY = offsetMessage.top - offsetTittle.top  
+            console.log(offsetFinalY);
+
+            var tween = gsap.to("#welcome-message-h1", {duration: 2, y: "-" + offsetFinalY});
+            tween.play();
+        }
         function animateHeadLftPos(){
-            var num1 = $('#header-title').last();
-            var offset1 = num1.offset();
+            var tittle = $('#header-title').last();
+            var offsetTittle = tittle.offset();
+            var message = $('#welcome-message-h1').last();
+            var offsetMessage = message.offset();
 
-            var num2 = $('#welcome-message-h1').last();
-            var offset2 = num2.offset();
+            var offsetFinalX = offsetMessage.left - offsetTittle.left
+            var tween = gsap.to("#welcome-message-h1", {duration: 2, x: "-" + offsetFinalX});
+            tween.play();
 
-         
-
-            var offsetFinal = offset2.left - offset1.left
-
-            console.log(offsetFinal);
-
-            var tween = gsap.to("#welcome-message-h1", {duration: 2, x: "-" + offsetFinal});
- 
         }
 
         function onFailure(error) {
