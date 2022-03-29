@@ -55,11 +55,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i>Home</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="ourProject.html"><i class="far fa-address-book"></i>Our Project</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>The Assignment</a>
+                                <a class="nav-link" href="theAssignment.html"><i class="far fa-clone"></i>The Assignment</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>The Can and its Mysteries contents</a>
@@ -107,12 +107,14 @@
         </div>
 
         <div class = "body-wrapper">
-
-            <div id="header">
-                <h1 id = "header-title">Can of Mysteries</h1>
-                <p>Read and search for creative articles that examin the many cases <br> mysterious topics that can all be found <a>in the mysterious contents</a> page. <br>  <span>Created and maintained by USCA teachers and students.</span></p>
-                <span><br><i>Searching For:</i></span>
+            <div id="header-container">
+                <div id="header">
+                    <h1 id = "header-title">Can of Mysteries</h1>
+                    <p>Read and search for creative articles that examin the many cases <br> mysterious topics that can all be found <a>in the mysterious contents</a> page. <br>  <span>Created and maintained by USCA teachers and students.</span></p>
+                    <span><br><i>Searching For:</i></span>
+                </div>
             </div>
+
 
             <aside id = "account">
                 <div id = acnt-container>
@@ -154,7 +156,7 @@
                     <span class="bottom-right"></span>
                     <span class="stalk"></span>
                     <span class="text">BACK</span>
-                  </button>
+                </button>
                   <h1>Example tittle<span id = "by">By: </span><span id = "article-author">Example author</span><span id = "date"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Date: 2/9/2022</span></h1>
                   <span id = "article-image1">
                     <img src="https://picsum.photos/190/190?12" />
@@ -167,7 +169,15 @@
                   </span>
                   <p id= "article-body-two">."Though a heart attack and SCA are different, they are sometimes linked.Brent MillerBrent Miller, 50, survived both. Brent knew something wasn’t right when he started to experience frequent severe crushing chest pain in early 2021. He was an avid runner, so a heart problem may not have seemed likely. However, Brent knew to not ignore his symptoms. He went to the hospital and learned he was having a heart attack.Brent’s doctors implanted a stent in his heart to restore blood flow. The quick medical attention saved his life, but the heart attack weakened his heart’s pumping ability. This condition put him at risk for sudden cardiac arrest. As part of his recovery, his doctor recommended he wear a lifesaving wearable defibrillator known as LifeVest for protection. Watch Brent’s story on the Sudden Cardiac Arrest Foundation website.2. SCA is sudden by its very nature; often the first sign a person has this condition is that they collapse and experience cardiac arrest.SCA has no warning signs. However, there are factors that may indicate someone is at risk for SCA. For example, certain heart patients may be at increased risk, including those who have suffered a heart attack or have been newly diagnosed with heart failure.Anyone who feels they might be at risk should see a cardiologist for evaluation. If you are at risk for SCA, a doctor may recommend a wearable defibrillator, implantable cardioverter defibrillator, medications, or other measures to prevent sudden death.In Brent’s case, following his heart attack, his doctors determined he was at high risk for SCA and prescribed LifeVest, a wearable defibrillator designed to detect certain life-threatening rapid heart rhythms and automatically deliver a lifesaving treatment shock."My SCA was very immediate; I did not feel it was coming on at all," says Brent. "I was talking to my wife, and I collapsed." Learn how Brent survived sudden cardiac arrest on the Sudden Cardiac Arrest Foundation website.3.</p>
                   <p id= "article-body-three">An SCA victim requires immediate emergency care, including CPR and a defibrillation shock — and you can help.If you witness what you think is sudden cardiac arrest, the first thing to do is to call 911 immediately before administering urgent and immediate care. After calling 911, start CPR compressions: Push hard and fast on the center of the chest. An SCA victim requires defibrillation and bystanders should seek an AED (automated external defibrillator) to provide treatment.If a patient is wearing LifeVest, which does not require third-party intervention, the device is designed to prompt bystanders to step aside while treatment is delivered. When Brent experienced SCA, he was at home in his bedroom. He suddenly lost consciousness. LifeVest detected the abnormal heart rhythm and delivered a treatment shock that saved his life."If I wasn’t wearing LifeVest that day, I have no doubt that I would have died," Brent says. "I’m just extremely grateful."With appropriate therapy, cardiac patients can often return to doing many of the things they enjoy. After experiencing both a heart attack and SCA, Brent has recovered and undergone cardiac rehab. He continues to run and is now training for a half-marathon in April.</p>
-                  
+                  <div class = "comment-section-article">
+                    <div id = "comment">
+                    <!-- begin wwww.htmlcommentbox.com -->
+                    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24cm0Si8cshM8Q1Ic9H6mlg%2F"+"&opts=16798&num=10&ts=1648591433178");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                    <!-- end www.htmlcommentbox.com -->
+                    </div>
+                </div>
             </Article>
             <div class="myGallery">
                 <div class="item">
@@ -206,9 +216,7 @@
                 </div>
             </div>
             <div id = "ftr-right">
-
             </div>
-            
         </div>
     </div>
     <div class="loader-container">
@@ -226,12 +234,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
-    <script src="script.js">
+    <script src="script.js"></script>
+    <script>     
     document.querySelector(".item").addEventListener("click", function(event){
         toggleArticleShow();
+        
     }); 
     document.querySelector(".back").addEventListener("click", function(event){
-    toggleArticleShow();
+        toggleArticleShow();
     });
     </script>
 </body>

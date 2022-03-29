@@ -197,6 +197,7 @@ document.querySelector("#acnt-upload-cnt").addEventListener("click", function(ev
 function toggleArticleShow(){
     console.log("test")
     $('Article').fadeToggle();
+    $('.myGallery').toggle();
 }
 
 

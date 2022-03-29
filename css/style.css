@@ -281,40 +281,78 @@ body{
 #acnt-upload-cnt i{
   font-size: 20px;
 }
+#header-container{
+  grid-area: slider;
+}
 #header{
-  padding-left:  20px;
-  display: inline-block;
-  margin: auto;
-  margin-left: 20px;
-  width: auto;
-  height: 300px;
-  white-space: nowrap;
-  font-size: 0;
+  display: grid;
   position: relative;
+  height: min-content;
+  grid-area: slider;
+  grid-template: "h" "p" "s";
+  margin-left: 20px;
   overflow: hidden;
-    
+  width: 100%;
+  font-size: 0;
+  padding-top: 0px;
+  padding: 50px;
+}
+.comment-section, .comment-section-article{
+  margin: 100px;
+  position: relative;
+  height: fit-content;
+  padding: 50px;
+  display: grid;
+  grid-template-areas: "comments" "form";
+  background-color: rgb(37, 36, 36);
+
+}
+.comment-section{
+  grid-area: center;
+}
+.comment-section-article{
+  grid-area: comment;
+
+}
+#comment{
+  grid-area: comments;
+  
+}
+#header h2{
+  font-size: 20px;
+  left: 10%;
+  grid-area: h;
+  top: 70px;
+  text-align: right;
+  position: relative;
+  text-align: left;
+  font-family: 'Abril Fatface', cursive;
+  color: rgba(202, 199, 199, 0.658);
 }
 #header h1{
   font-size: 60px;
+  grid-area: h;
   position: relative;
+  text-align: left;
   font-family: 'Abril Fatface', cursive;
-  float: left;
   color: rgb(182, 182, 182);
 }
 #header p{
   font-size: 20px;
+  grid-area: p;
   text-align: left;
-  
+  padding: 20px;
+  overflow: hidden;
   float: left;
   color: rgb(182, 182, 182);
 
 }
 #header span{
+  grid-area: s;
   font-size:  15px;
   text-align: left;
   float: left;
   color: rgb(131, 128, 128);
-
 }
 
 #header span:nth-child(3){
@@ -328,9 +366,11 @@ body{
     height: 1300px; 
 }
 .archives{
+  padding-top: 750px;
     grid-area: right;
+    z-index: 0;
     margin-bottom: 300px;
-    width: 400px;
+    width: 300px;
     font-family: 'Prata', serif;
     color: rgb(182, 182, 182);
     border-left: 1px solid rgba(128, 125, 125, 0.61);
@@ -343,6 +383,7 @@ body{
   font-size: 25px;
 }
 .myGallery {
+  top: 100px;
     padding: 40px;
     grid-area: center;
     display: grid;
@@ -415,6 +456,7 @@ body{
       left: 20px;
       width: 276px;
       border-bottom: 1px solid rgb(71, 71, 71);
+      background-color: rgb(228, 39, 39);
       height: 120px;
   }
   .author{
@@ -451,34 +493,19 @@ body{
     color: rgb(136, 133, 133);
   }
   .myGallery .caption {
-    margin: 0;
-    padding: 1em;
     font-family: 'Prata', serif;
-    position: absolute;
     font-weight: 500;
-    z-index: 1;
-    bottom: 0;
-    left: 349px;
     top: 10px;
     width: 100%;
-    text-align: left;
-    max-height: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0);
-    color: rgb(255, 255, 255);
   }
   
-  .myGallery .description{
+  .myGallery .description, .myGallery .caption {
     margin: 0;
     padding: 1em;
     position: absolute;
-    font-weight: 400;
     z-index: 1;
     bottom: 0;
-    left: 349px;
-    top: 30px;
-    width: 250px;
+    left: 370px;
     height: 250px;
     text-align: left;
     max-height: 100%;
@@ -486,6 +513,13 @@ body{
     font-size: 14px;
     background: rgba(0, 0, 0, 0);
     color: rgb(136, 133, 133);
+  }  
+  .myGallery .description{
+    top: 30px;
+    margin: 0;
+    padding: 1em;
+    position: absolute;
+    width: 240px;
   }
   
   .myGallery .item:hover .caption {
@@ -643,12 +677,12 @@ body{
 	    flex-basis: auto;
 	}
     .body-wrapper{
-        grid-template:  "account search search search" 
-        "account slider slider blank"
-         "account center center right" 
-         "account center center right" 
-         "account center1 center1 right" 
-         "account center1 center1 right";
+        grid-template:  "account search search blank"
+        "account slider slider right"
+         "account center center right"
+         "account center center right"
+         "account center center right"
+         "account center center right";
 
     }
     
@@ -706,12 +740,13 @@ body{
     .body-wrapper{
         grid-template:  
         "account search search search" 
-        "account slider slider blank" 
+        "account slider slider right"
         "account center center right" 
         "account center center right" 
         "account center center right"
         "account center center right"
         "footer footer footer footer";
+
 
     }
     .no-stick{
@@ -725,6 +760,12 @@ body{
       grid-column-gap: 50px;
       left: 9px;
       top: 0px;
+    }
+
+  }
+  @media(max-width: 1100px){
+    .archives{
+      visibility: hidden;
     }
   }
   @media(min-width: 1200px) {
@@ -948,14 +989,17 @@ nav{
   color: #757575;
   float: right;
 }
+
 Article{
   background-color: #111111;
   color: rgb(182, 182, 182);
+  position: relative;
+  margin-top: 350px;
   height: 100%;
   z-index: 1;
   display: grid;
   height: fit-content;
-  grid-template-areas: "tittle tittle" "image1 body1" "body2 body2" "body3 image2";
+  grid-template-areas: "tittle tittle" "image1 body1" "body2 body2" "body3 image2" "comment comment";
   grid-area: center;
   grid-template-rows: minmax(100px, max-content);
   grid-template-columns: 50%;
@@ -1031,6 +1075,7 @@ p{
 .back {
   position: relative;
   color: #757575;
+  z-index: 30;
   top: 30px;
   margin-left: 90%;
   background: none;
@@ -1178,7 +1223,7 @@ p{
 #page-body p{
   padding-left: 100px;
   padding-right: 100px;
-  position: relative;i
+  position: relative;
 
 }
 .loader-container{
@@ -1217,3 +1262,39 @@ p{
       transform: rotate(360deg);
   }
 }
+
+#HCB_comment_box blockquote{
+  background-color: rgba(129, 123, 123, 0.411);
+}
+#HCB_comment_box h3{
+  font-family: 'Abril Fatface', cursive;
+  font-size: 40px;
+  text-align: left;
+}
+#HCB_comment_box #hcb_form_name_container{
+  text-align: left;
+}
+#HCB_comment_box .home-desc{
+  visibility: hidden;
+}
+#HCB_comment_box{
+  font-family: "Helvetica Neue",Helvetica,Arial;
+  color: white;
+}
+
+#HCB_comment_box .hcb-comment-tb{
+  font-family: "Helvetica Neue",Helvetica,Arial;
+}
+#HCB_comment_box .hcb-comment-body{
+  text-align: left;
+}
+#HCB_comment_box .date{
+  text-align: left;
+}
+#HCB_comment_box button{
+  background-color: #2ecc71;
+}
+#HCB_comment_box label, #HCB_comment_box #hcb_settings{
+  background-color: white;
+}
+
