@@ -6,7 +6,6 @@
 a{
   color: #aaa;
 }
-
 @font-face {font-family: "MyWebFont"; src: url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.eot"); src: url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.woff") format("woff"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/02d0c55246be027455d79356f31ff7c2.svg#MysteryEF") format("svg"); }
 @font-face {font-family: "MyWebFont2"; src: url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.eot"); src: url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.woff") format("woff"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0bf423318c95d14a48c0a056c4beaae5.svg#MysteryEF") format("svg"); }
 .form-control::placeholder {
@@ -305,6 +304,7 @@ body{
 #header p{
   font-size: 20px;
   text-align: left;
+  
   float: left;
   color: rgb(182, 182, 182);
 
@@ -899,6 +899,7 @@ nav{
   
 .article-upload{
   position: fixed;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   z-index: 30;
@@ -1169,4 +1170,50 @@ p{
   font-size: larger;
   top: 252px;
   text-decoration-style: wavy;
+}
+#page-body{
+  grid-area: search / center / center;
+  background-color: white;
+}
+#page-body p{
+  padding-left: 100px;
+  padding-right: 100px;
+  position: relative;i
+
+}
+.loader-container{
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader{
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border: 5px solid;
+  color: #3498db;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader{
+  25%{
+      color: #2ecc71;
+  }
+  50%{
+      color: #f1c40f;
+  }
+  75%{
+      color: #e74c3c;
+  }
+  to{
+      transform: rotate(360deg);
+  }
 }
