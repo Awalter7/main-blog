@@ -23,12 +23,25 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="188291999968-v7rdgm2p73bkdqis7h8a5209na92gsbh.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        @media(min-width: 900px){
+            .body-wrapper{
+                grid-template:  
+                    "account search search" 
+                    "account slider right"
+                    "account center  right"
+                    "footer footer footer";
+                grid-template-rows: auto auto auto auto ;
+                grid-template-columns: .5fr auto 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class = "main-wrapper">
-        <div class = "up-container">
+        <div class = "upload-container">
             
-            <div class = "up-form-wrapper">
+            <div class = "upload-form-wrapper">
                 <h1>Article Upload</h1>
                 <i class="fa fa-close" style="font-size:24px"></i>
                 <form action="">
@@ -41,8 +54,8 @@
                 </form>
             </div>
         </div>
-        <div class = "nav-wrapper">
-            <div id = "nav-bar-top"> 
+        <div class = "navbar-wrapper">
+            <div id = "navbar-top"> 
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white"></i>
@@ -106,8 +119,8 @@
             </div>  
         </div>
 
-        <div class = "body-wrapper">
-            <div id="header-container">
+        <div class = "body-wrapper" >
+            <div class="header-container" id="header-container-theAssinment">
                 <div id = "header">
                     <h1>
                         The Assignment
@@ -116,7 +129,6 @@
                         Analytical Research Paper/Can of Mystery
                     </h2>
                     <p>
-                        
                         <br>
                         It’s about to get real weird in here! Canofmystery.blogspot.com
                         <br>
@@ -198,21 +210,30 @@
                         Sources are going to be vital in obtaining information on your subject, and may be important sources of controversial information.  However, you must consider the validity and the datedness of the resources, especially when dealing with web sites. We want to use the best sources available! (Use MLA format for citations, abstract and annotated bibliography).  Think outside of the box. There are videos, web pages, newspaper articles, history books, encyclopedias, related topics and the like, all of which could help you gather information on your topic.
                     </p>
                 </div>
+                <div class = "comment-section">
+                    <div id = "comment">
+                    <!-- begin wwww.htmlcommentbox.com -->
+                    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24cm0Si8cshM8Q1Ic9H6mlg%2F"+"&opts=16798&num=10&ts=1648591433178");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                    <!-- end www.htmlcommentbox.com -->
+                    </div>
+                </div>
             </div>
             
-            <aside id = "account">
-                <div id = acnt-container>
-                    <div id = "circle">
+            <aside class ="account-container" id = "account-container-animation">
+                <div id = account-user-container>
+                    <div id = "user-icon">
                     </div>
                     <span id="username">Austin Walter</span>
                 </div>
-                <div id = "acnt-settings-cnt">
+                <div id = "account-settings-container">
                     <a>
                     <i id="sett-icon" class="material-icons">settings</i>
                     <span id="settings">Settings</span>
                     </a>
                 </div>
-                <div id = "acnt-upload-cnt">
+                <div id = "account-upload-container">
                     <a href="">
                     <i id="Upload-icon" class="glyphicon glyphicon-upload"></i>
                     <span id="upload">Upload</span>
@@ -229,13 +250,12 @@
                     <li>test</li>
                 </ul>
             </div>
-
         <div class = "footer-wrapper">
             <div id = "ftr-left">
 
             </div >
             <div id = "ftr-center">
-                <div id = "cntr-ftr-tittle">
+                <div id = "cntr-ftr-title">
                    <h1> About Us</h1>
                 </div>
                 <div id = "cntr-ftr-content">
@@ -243,17 +263,6 @@
                 </div>
             </div>
             <div id = "ftr-right">
-
-            </div>
-            
-        </div>
-        <div class = "comment-section">
-            <div id = "comment">
-            <!-- begin wwww.htmlcommentbox.com -->
-            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
-            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24cm0Si8cshM8Q1Ic9H6mlg%2F"+"&opts=16798&num=10&ts=1648591433178");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-            <!-- end www.htmlcommentbox.com -->
             </div>
         </div>
     </div>
@@ -273,5 +282,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
     <script src="script.js"> </script>
+    <script>
+
+    </script>
 </body>
 </html>

@@ -69,14 +69,14 @@ input{
     grid-template: "slider" "gallery" "side";
     column-gap: 10px;
 }
-.nav-wrapper{
+.navbar-wrapper{
     
     justify-content: center;
     width: 100%;
     height: 100px;
     background-color: rgb(37, 36, 36);
 }
-#nav-bar-top{
+#navbar-top{
   position: relative;
   z-index: 41;
   height: 60px;
@@ -140,9 +140,9 @@ input{
     left: 4000px;
 }
 .sticky{
-    position: fixed;
-    top:0px;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 * {box-sizing: border-box;}
 .mySlides {display: none;}
@@ -219,7 +219,7 @@ body{
   text-rendering: optimizelegibility;
   background-color: #111111;
 }
-#circle {
+#user-icon {
   width: 70px;
   position: relative;
   top: 15px;
@@ -236,13 +236,13 @@ body{
   color: rgb(182, 182, 182);
   top: 20px;
 }
-#acnt-container{
+#account-user-container{
   text-align: center;
   position: relative;
   top: 50px;
   height: 120px;
 }
-#acnt-settings-cnt{
+#account-settings-container{
   color: rgb(182, 182, 182);
   text-align: center;
   position: relative;
@@ -250,7 +250,7 @@ body{
   height: 50px;
   overflow: hidden;
 }
-#acnt-upload-cnt{
+#account-upload-container{
   color: rgb(182, 182, 182);
   text-align: center;
   position: relative;
@@ -268,27 +268,29 @@ body{
   top: 12px;
   margin-left: -50px;
 }
-#acnt-settings-cnt span{
+#account-settings-container span{
   position: absolute;
   margin-left: -20px;
   top: 14px;
 }
-#acnt-upload-cnt span{
+#account-upload-container span{
   position: absolute;
   margin-left: -20px;
   top: 14px;
 }
-#acnt-upload-cnt i{
+#account-upload-container i{
   font-size: 20px;
 }
-#header-container{
+.header-container{
   grid-area: slider;
+  height: fit-content;
+}
+#header-container-theAssignment{
+  grid-area: center;
 }
 #header{
   display: grid;
   position: relative;
-  height: min-content;
-  grid-area: slider;
   grid-template: "h" "p" "s";
   margin-left: 20px;
   overflow: hidden;
@@ -297,6 +299,31 @@ body{
   padding-top: 0px;
   padding: 50px;
 }
+#article-header{
+  display: grid;
+  position: relative;
+  grid-template: "h" "p" "s";
+  overflow: hidden;
+  width: 100%;
+  font-size: 0;
+  padding-top: 0px;
+  grid-area: title;
+}
+#article-header-title{
+  font-size: 50px;
+  text-align: left;
+  font-family: 'Abril Fatface', cursive;
+  position: relative;
+  grid-area: h;
+}
+#article-header-p{
+  position: relative;
+  grid-area: p;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  font-size: 30px;
+ }
 .comment-section, .comment-section-article{
   margin: 100px;
   position: relative;
@@ -384,12 +411,17 @@ body{
 }
 .myGallery {
   top: 100px;
-    padding: 40px;
     grid-area: center;
     display: grid;
-    grid-gap: 52px;
-    grid-row-gap: 52px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 90px;
+    grid-row-gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    position: relative;
+    margin-right: 100px;
+    height:fit-content;
+    margin-top: 20px;
+    font-size: 1rem;
+    
   }
   .myGallery .item ul{
     list-style: none;
@@ -476,7 +508,7 @@ body{
     background: rgba(255, 255, 255, 0);
     color: rgb(153, 151, 151);
   }
-  .post-time{
+  .date{
     margin: 0;
     padding: 1em;
     position: absolute;
@@ -492,14 +524,17 @@ body{
     background: rgba(0, 0, 0, 0);
     color: rgb(136, 133, 133);
   }
-  .myGallery .caption {
+  .myGallery .title {
     font-family: 'Prata', serif;
     font-weight: 500;
     top: 10px;
     width: 100%;
   }
+  #hiddenHtml{
+    visibility: hidden;
+  }
   
-  .myGallery .description, .myGallery .caption {
+  .myGallery .description, .myGallery .title{
     margin: 0;
     padding: 1em;
     position: absolute;
@@ -519,10 +554,10 @@ body{
     margin: 0;
     padding: 1em;
     position: absolute;
-    width: 240px;
+    width: 100%;
   }
   
-  .myGallery .item:hover .caption {
+  .myGallery .item:hover .title {
     transform: translateY(0%);
   }
   .myGallery .item:hover ~ image{
@@ -538,14 +573,7 @@ body{
     text-align: center;
   }
   
-  .myGallery {
-    position: relative;
-    left: 0px;
-    width: fit-content;
-    height:fit-content;
-    margin-top: 20px;
-    font-size: 1rem;
-  }
+
   .footer-wrapper{
       padding: 20px;
       overflow-y: hidden;
@@ -634,7 +662,7 @@ body{
   .hori-selector{
     height: 200;
   }
-  .nav-wrapper{
+  .navbar-wrapper{
     
     height: 200px;  
 }
@@ -650,7 +678,7 @@ body{
   .hori-selector{
     height: 140;
   }
-  .nav-wrapper{
+  .navbar-wrapper{
     height: 140px;
   }
 
@@ -677,13 +705,11 @@ body{
 	    flex-basis: auto;
 	}
     .body-wrapper{
-        grid-template:  "account search search blank"
-        "account slider slider right"
-         "account center center right"
-         "account center center right"
-         "account center center right"
-         "account center center right";
-
+        grid-template:  
+        "account search blank"
+        "account slider  right"
+        "account center  right"
+        "footer footer footer"
     }
     
 }
@@ -727,7 +753,7 @@ body{
     margin-left: 10px;
 
   }
-.myGallery .caption {
+.myGallery .title {
   left: 9px;
   top: 270px;
 }
@@ -737,27 +763,16 @@ body{
   top: 290px;
 }
 
-    .body-wrapper{
-        grid-template:  
-        "account search search search" 
-        "account slider slider right"
-        "account center center right" 
-        "account center center right" 
-        "account center center right"
-        "account center center right"
-        "footer footer footer footer";
 
-
-    }
-    .no-stick{
-      top: 90px;
+  .no-stick{
+     top: 90px;
   }
   }
   @media(min-width: 1100px) {
     
     .myGallery{
       
-      grid-column-gap: 50px;
+      grid-column-gap: 100px;
       left: 9px;
       top: 0px;
     }
@@ -772,14 +787,14 @@ body{
 
     .myGallery{
       position: relative;
-      grid-column-gap: 50px;
+      grid-column-gap: 90px;
       left: 9px;
       top: 0px;
     }
     .no-stick{
       top: 50px;
   }
-  .nav-wrapper{
+  .navbar-wrapper{
    height: 50px;
   }
 
@@ -814,13 +829,13 @@ nav{
   width: 40%;
   height: 100%;
 }
-#cntr-ftr-tittle{
+#cntr-ftr-title{
   font-family: 'Abril Fatface', cursive;
   background-color: rgb(34, 33, 33);
   height: 50px;
     width: auto;
 }
-#cntr-ftr-tittle h1{
+#cntr-ftr-title h1{
   position: relative;
   color: rgb(182, 182, 182);
   font-family: 'Abril Fatface', cursive;
@@ -834,17 +849,16 @@ nav{
   height: 100%;
   width: auto;
 }
-#account{
+.account-container{
     background-color: rgb(37, 36, 36);
     position: relative;
     top: 1100px;
     grid-area: account ;
     z-index: 41;
     width: 150px;
-}
-#account{
     height: 107.9%;
 }
+
 .ham.active{
     background-color: rgba(255, 255, 255, 0);
 }
@@ -937,7 +951,46 @@ nav{
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
     cursor: not-allowed;
   }
+article{
+  background-color: #111111;
+  color: rgb(182, 182, 182);
+  position: relative;
+  top: -500px;
+  height: 100%;
+  z-index: 1;
+  display: grid;
+  height: fit-content;
+  grid-template-areas:
+      "title title"
+      "body body"
+      "comment comment" ;
+  grid-area: center;
+  grid-template-rows: minmax(100px, max-content);
+  grid-template-columns: 50%;
+  padding: 20%;
+  padding-top: 0%;
+  width: fit-content;
   
+  
+}
+.article-html{
+  font-size: large;
+  align-content: left;
+  grid-area: body;
+padding-top: 10%;
+  border-top: 1px solid #757575b4; 
+  padding: 50px;
+  background-color: #5250501e;
+  
+}
+.article-html p{
+  text-shadow: 1px 4px 22px rgba(0,0,0,0.6);
+ text-align: left;
+}
+.article-html img{
+  max-width: 100%;
+  max-height: 100%;
+ }
 .article-upload{
   position: fixed;
   visibility: hidden;
@@ -957,17 +1010,24 @@ nav{
   min-width: 100%;
 }
 
-.up-container{
+.upload-container{
   position: fixed;
   background-color: rgba(0, 0, 0, 0.479);
-  padding: 200px;
-  padding-bottom: 150px;
-  padding-top: 100px;
   width: 100vw;
   height: 100vh;
-  z-index: 30;
+  z-index: 50;
 }
-.up-form-wrapper{
+
+.upload-container label{
+  float: left;
+  color: #757575;
+}
+.upload-container button{
+  position: relative;
+  float: left;
+  margin-left: 25px;
+}
+.upload-form-wrapper{
   width: auto;
   height: 100%;
   padding: 200px;
@@ -975,43 +1035,19 @@ nav{
   padding-bottom: 150px;
   background-color: #202020;
 }
-.up-form-wrapper form{
+.upload-form-wrapper form{
   width: auto;
   height: 100%;
   background-color: #1111113f;
 }
-.up-form-wrapper h1{
+.upload-form-wrapper h1{
   color: #757575;
   font-family: 'Abril Fatface', cursive;
 }
-.up-form-wrapper i{
+.upload-form-wrapper i{
   position: relative;
   color: #757575;
   float: right;
-}
-
-Article{
-  background-color: #111111;
-  color: rgb(182, 182, 182);
-  position: relative;
-  margin-top: 350px;
-  height: 100%;
-  z-index: 1;
-  display: grid;
-  height: fit-content;
-  grid-template-areas: "tittle tittle" "image1 body1" "body2 body2" "body3 image2" "comment comment";
-  grid-area: center;
-  grid-template-rows: minmax(100px, max-content);
-  grid-template-columns: 50%;
-  padding: 50px;
-}
-Article h1{
-  grid-area: tittle;
-  position: relative;
-  font-family: 'Abril Fatface', cursive;
-  font-size: 60px;
-  margin: 0 auto;
-  left: 13%;
 }
 h1 span{
   font-size: 20px;
@@ -1022,38 +1058,8 @@ h1 span{
 p{
   color: white;
 }
-#article-image1, #article-image2{
-  margin-top: 20px;
-  padding: 10px;
-  padding-bottom: 0px;
-}
-#article-image1{
-  grid-area: image1;
-}
-#article-image2{
-  grid-area: image2;
-}
-#article-image1 img, #article-image2 img{
-  width: 70%;
-}
-#article-body-one,
-#article-body-two,
-#article-body-three{
-  font-size: 17px;
-  overflow: hidden;
-  padding: 10px;
-  padding-top: 20px;
-  text-align: left;
-  height: fit-content;
-}
-#article-body-one{
-  grid-area: body1;
-}
-#article-body-two{
-  grid-area: body2;
-}
-#article-body-three{
-  grid-area: body3;
+.post-header{
+
 }
 #img-caption{
   position: relative;
@@ -1080,7 +1086,7 @@ p{
   margin-left: 90%;
   background: none;
   border: 0;
-  grid-area: tittle;
+  grid-area: title;
   height: 60px;
   width: 60px;
 }
@@ -1297,4 +1303,3 @@ p{
 #HCB_comment_box label, #HCB_comment_box #hcb_settings{
   background-color: white;
 }
-

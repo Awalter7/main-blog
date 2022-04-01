@@ -12,12 +12,12 @@ function onLoadAnimation(x){
     var tween = gsap.to("#search-br", {duration: x, x:"-" + offsetBr});
     tween.play();
 
-    var navBr = $('#nav-bar-top').last();
+    var navBr = $('#navbar-top').last();
     var navBar = navBr.offset();
     var offsetNav = navBar.left
 
-    var tween = gsap.to("#nav-bar-top", {duration: x, x:"-" + offsetNav});
-    var tween = gsap.to("#account", {duration: x, y:-1150});
+    var tween = gsap.to("#navbar-top", {duration: x, x:"-" + offsetNav});
+    var tween = gsap.to(".account-container", {duration: x, y:-1150});
     tween.play();
 }
 function preLoaderFadeout(){
@@ -26,25 +26,23 @@ function preLoaderFadeout(){
     $('body').css('overflow-x', "hidden");
 }
 function animateHeadTopPos(){
-    var tittle = $('#header-title').last();
-    var offsetTittle = tittle.offset();
+    var title = $('#header-title').last();
+    var offsettitle = title.offset();
     var message = $('#welcome-message-h1').last();
     var offsetMessage = message.offset();
 
 
-    var offsetFinalY = offsetMessage.top - offsetTittle.top  
-    console.log(offsetFinalY);
-
+    var offsetFinalY = offsetMessage.top - offsettitle.top  
     var tween = gsap.to("#welcome-message-h1", {duration: 2, y: "-" + offsetFinalY});
     tween.play();
 }
 function animateHeadLftPos(){
-    var tittle = $('#header-title').last();
-    var offsetTittle = tittle.offset();
+    var title = $('#header-title').last();
+    var offsettitle = title.offset();
     var message = $('#welcome-message-h1').last();
     var offsetMessage = message.offset();
 
-    var offsetFinalX = offsetMessage.left - offsetTittle.left
+    var offsetFinalX = offsetMessage.left - offsettitle.left
     var tween = gsap.to("#welcome-message-h1", {duration: 2, x: "-" + offsetFinalX});
     tween.play();
 
@@ -56,26 +54,17 @@ console.log(error);
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
 var profile = googleUser.getBasicProfile();
-console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-console.log('Full Name: ' + profile.getName());
-console.log('Given Name: ' + profile.getGivenName());
-console.log('Family Name: ' + profile.getFamilyName());
-console.log("Image URL: " + profile.getImageUrl());
-console.log("Email: " + profile.getEmail());
 
 // The ID token you need to pass to your backend:
 var id_token = googleUser.getAuthResponse().id_token;
-console.log("ID Token: " + id_token);
 
-console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
  var profile = googleUser.getBasicProfile()
 
  var element = document.querySelector('#username')
  element.innerText = profile.getName();
 
 var imageUrl = "url('" + profile.getImageUrl() +"')";
-console.log(imageUrl)
-document.getElementById("circle").style.backgroundImage = imageUrl
+document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 }
 window.onscroll = function() {myFunction()};
@@ -103,29 +92,28 @@ let autoSlidePlay = true;
 
 var ham = document.querySelector(".ham");
 ham.addEventListener("click", function(){
-    console.log();
-    if(window.getComputedStyle(document.getElementById("account"), null).width > "100px"){
-        $('#account').animate({width: 100}, {duration: 500});
+    if(window.getComputedStyle(document.getElementById("account-container-animation"), null).width > "100px"){
+        $('.account-container').animate({width: 100}, {duration: 500});
         $('.form-control').animate({left: 100}, {duration: 500});
         $('#search-addon').animate({left: 140}, {duration: 500});
-        $('#circle').animate({left: 15}, {duration: 500});
+        $('#user-icon').animate({left: 15}, {duration: 500});
         $('#username').fadeOut();
         $('#settings').fadeOut();
         $('#upload').fadeOut();
-        $('#account i').css("fontSize", "30px")
-        $('#account i').animate({left: 83}, {duration: 500});
-        $('#acnt-container').animate({height: 100}, {duration: 500});
+        $('.account-container i').css("fontSize", "30px")
+        $('.account-container i').animate({left: 83}, {duration: 500});
+        $('#account-user-container').animate({height: 100}, {duration: 500});
     }else{
-        $('#account').animate({width: 150}, {duration: 500});
+        $('.account-container').animate({width: 150}, {duration: 500});
         $('.form-control').animate({left: 150}, {duration: 500});
         $('#search-addon').animate({left: 190}, {duration: 500});
-        $('#circle').animate({left: 40}, {duration: 500});
-        $('#account i').animate({left: 75}, {duration: 500});
-        $('#account i').css("fontSize", "20px")
+        $('#user-icon').animate({left: 40}, {duration: 500});
+        $('.account-container i').animate({left: 75}, {duration: 500});
+        $('.account-container i').css("fontSize", "20px")
         $('#username').fadeIn();
         $('#settings').fadeIn();
         $('#upload').fadeIn();
-        $('#acnt-container').animate({height: 120}, {duration: 500});   
+        $('#account-user-container').animate({height: 120}, {duration: 500});   
     }            
 })
 
@@ -179,23 +167,18 @@ $(".navbar-toggler").click(function(){
     $(".navbar-collapse").slideToggle(300);
     setTimeout(function(){ test(); });
 });
-
-function toggleArticleUpload(){
-    console.log("test")
-    $('.up-container').fadeToggle();
-}
-
 document.querySelector(".fa").addEventListener("click", function(event){
-    toggleArticleUpload();
+    $('.upload-container').fadeToggle();
+    var innerDocument = document.getElementById('htmeditor_ifr').contentWindow.document
     event.preventDefault();
+
 });
-document.querySelector("#acnt-upload-cnt").addEventListener("click", function(event){
-    toggleArticleUpload();
+document.querySelector("#account-upload-container").addEventListener("click", function(event){
+    $('.upload-container').fadeToggle();
     event.preventDefault();
 });
 
 function toggleArticleShow(){
-    console.log("test")
     $('Article').fadeToggle();
     $('.myGallery').toggle();
 }
@@ -239,12 +222,12 @@ let username = getCookie("username");
 if (username != "") {
     $(".pre-loader").hide();
     $('article').hide();
-    $('.up-container').hide();
+    $('.upload-container').hide();
     setTimeout(onLoadAnimation(0), 3000)
 
 } else {
     $('article').hide();
-    $('.up-container').hide();
+    $('.upload-container').hide();
     setTimeout(animateHeadTopPos, 1000)
     setTimeout(animateHeadLftPos, 3000)
     setTimeout(onLoadAnimation(2), 3000)

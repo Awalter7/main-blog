@@ -1,248 +1,359 @@
 <!DOCTYPE html>
 <html lang="1.1">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1049749345591002"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="188291999968-v7rdgm2p73bkdqis7h8a5209na92gsbh.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-</head>
-<body>
-    <div class = "main-wrapper">
-        <div class = "up-container">
-            
-            <div class = "up-form-wrapper">
-                <h1>Article Upload</h1>
-                <i class="fa fa-close" style="font-size:24px"></i>
-                <form action="">
-                    <form class="form-inline">
-                        <div class="form-group mb-2">
-                            <label for="staticEmail2" class="sr-only">Email</label>
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Can of Mysteries</title>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1049749345591002"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="188291999968-v7rdgm2p73bkdqis7h8a5209na92gsbh.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <style>
+            @media(min-width: 900px){
+                .body-wrapper{
+                    grid-template:  
+                        "account search search" 
+                        "account slider right"
+                        "account center  right"
+                        "footer footer footer";
+                    grid-template-rows: auto 400px auto auto ;
+                    grid-template-columns: .5fr auto 300px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "main-wrapper">
+            <div class = "upload-container">
+                <div class = "upload-form-wrapper">
+                    <h1>Article Upload</h1>
+                    <i class="fa fa-close" style="font-size:24px"></i>
+                    <textarea id="htmeditor"></textarea> <script src="https://htmeditor.com/js/htmeditor.min.js"      htmeditor_textarea="htmeditor"      full_screen="no"      editor_height="480"     run_local="no"> </script> 
+                    <form>
+                        <div class = "form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">Author First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Author Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+                        </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputtitle">Article title</label>
+                            <input type="text" class="form-control" id="inputtitle" placeholder="title" required="true">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="descriptionTextArea">Example textarea</label>
+                            <textarea class="form-control" id="descriptionTextArea" rows="5" required="true"></textarea>
+                        </div>
+                        <div class = "form-row">
+                            <div class="form-group col-md-6">
+                            <label for="inputTag1">Tags - Seperate each tag by 1 comma with no spaces</label>
+                            <input type="text" class="form-control" id="inputTag1" placeholder="Tag" required="true">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCanItem">Can Item</label>
+                            <input type="text" class="form-control" id="inputCanItem" placeholder="Can Item" required="true">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputCoverImage">Cover Image Link</label>
+                            <input type="text" class="form-control" id="inputCoverImage" placeholder="URL" required="true">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="articleSubmitBtn">Submit</button>
+                    </form>            
+                </div>
+            </div>
+            <div class = "navbar-wrapper">
+                <div id = "navbar-top"> 
+                    <nav class="navbar navbar-expand-custom navbar-mainbg">
+                        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars text-white"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i>Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="ourProject.html"><i class="far fa-address-book"></i>Our Project</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="theAssignment.html"><i class="far fa-clone"></i>The Assignment</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>The Can and its Mysteries contents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Using our work as a Resource (Citations)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+                                </li>
+                            </ul>
+                            <script>
+                                function onSuccess(googleUser) {
+                                }
+                            </script>
+                            <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
+                                <path
+                                    class="line top"
+                                    d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272" />
+                                <path
+                                    class="line middle"
+                                    d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272" />
+                                <path
+                                    class="line bottom"
+                                    d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272" />
+                            </svg>
+                        </div>
+                    </nav>
+                </div>
+                <div id = "search-br" class="no-stick">
+                    <form class="d-flex input-group srch">
+                        <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <span class="input-group-text" id="search-addon">
+                            <span style="color: rgb(131, 127, 127)" class="glyphicon glyphicon-search icon-search"></span>
+                        </span> 
                     </form>
-                </form>
+                    <div class="google g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="35"  data-theme="dark" style="position: relative; left: -150px; margin-top: -75px; float: right;"></div>
+                </div>  
             </div>
-        </div>
-        <div class = "nav-wrapper">
-            <div id = "nav-bar-top"> 
-                <nav class="navbar navbar-expand-custom navbar-mainbg">
-                    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars text-white"></i>
-                    </button>
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-
-                            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="ourProject.html"><i class="far fa-address-book"></i>Our Project</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="theAssignment.html"><i class="far fa-clone"></i>The Assignment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>The Can and its Mysteries contents</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Using our work as a Resource (Citations)</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
-                            </li>
-                           
-                        </ul>
-                        <script>
-                            function onSuccess(googleUser) {
-
-                            }
-                        </script>
-
-                        <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
-                            <path
-                                  class="line top"
-                                  d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272" />
-                            <path
-                                  class="line middle"
-                                  d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272" />
-                            <path
-                                  class="line bottom"
-                                  d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272" />
-                          </svg>
-                          
-                    </div>
-
-                </nav>
-                
-            </div>
-            <div id = "search-br" class="no-stick">
-                <form class="d-flex input-group srch">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text" id="search-addon">
-                        <span style="color: rgb(131, 127, 127)" class="glyphicon glyphicon-search icon-search"></span>
-                    </span> 
-                </form>
-                <div class="google g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="35"  data-theme="dark" style="position: relative; left: -150px; margin-top: -75px; float: right;"></div>
-            </div>  
-        </div>
-
-        <div class = "body-wrapper">
-            <div id="header-container">
-                <div id="header">
-                    <h1 id = "header-title">Can of Mysteries</h1>
-                    <p>Read and search for creative articles that examin the many cases <br> mysterious topics that can all be found <a>in the mysterious contents</a> page. <br>  <span>Created and maintained by USCA teachers and students.</span></p>
-                    <span><br><i>Searching For:</i></span>
-                </div>
-            </div>
-
-
-            <aside id = "account">
-                <div id = acnt-container>
-                    <div id = "circle">
-                    </div>
-                    <span id="username">Austin Walter</span>
-                </div>
-                <div id = "acnt-settings-cnt">
-                    <a>
-                    <i id="sett-icon" class="material-icons">settings</i>
-                    <span id="settings">Settings</span>
-                    </a>
-                </div>
-                <div id = "acnt-upload-cnt">
-                    <a href="">
-                    <i id="Upload-icon" class="glyphicon glyphicon-upload"></i>
-                    <span id="upload">Upload</span>
-                    </a>
-                </div>
-            </aside>
-
-            <div id = "grid-text-box">
-                <span id = "text-descrip-grid"></span>
-            </div>
-
-            <div class = "archives">
-                <h1>Archives</h1>
-                <br>
-                <ul>
-                    <li>test</li>
-                </ul>
-            </div>
-            
-            <Article>
-                <button class="back back--one">
-                    <span class="top-left"></span>
-                    <span class="top-right"></span>
-                    <span class="bottom-left"></span>
-                    <span class="bottom-right"></span>
-                    <span class="stalk"></span>
-                    <span class="text">BACK</span>
-                </button>
-                  <h1>Example tittle<span id = "by">By: </span><span id = "article-author">Example author</span><span id = "date"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Date: 2/9/2022</span></h1>
-                  <span id = "article-image1">
-                    <img src="https://picsum.photos/190/190?12" />
-                    <span id = "img-caption">Example Caption</span>
-                  </span>
-                  <p id= "article-body-one">This February, American Heart Month, you can learn critical information about sudden cardiac arrest (SCA) that could help you save a life. Three key things to remember:1. SCA is not a heart attack: SCA is an "electrical" problem affecting the heart rhythm, and a heart attack is a "plumbing" problem affecting blood flow.It’s a very common misperception that a heart attack and SCA are the same thing. However, they are very different.A heart attack occurs when part of the heart’s blood supply is reduced due to a partial or complete blockage, and the heart muscle becomes injured or dies.SCA, on the other hand, is related to the heart’s internal electrical system. When this system fails, it may trigger a dangerously fast heartbeat causing the heart to quiver and stop pumping blood to the body and brain. This can cause a victim to pass out suddenly — this is SCA."A heart attack victim is usually awake and can seek help, but a sudden cardiac arrest victim typically passes out immediately and must rely on others to provide immediate treatment," says Mary Newman, president and CEO of the Sudden Cardiac Arrest Foundation."The two conditions require vastly different treatment. The chance of survival following a sudden cardiac arrest decreases 10 percent with every passing minute.</p>
-                  <span id = "article-image2">
-                    <img src="https://picsum.photos/190/190?11" />
-                    <span id = "img-caption">Example Caption</span>
-                  </span>
-                  <p id= "article-body-two">."Though a heart attack and SCA are different, they are sometimes linked.Brent MillerBrent Miller, 50, survived both. Brent knew something wasn’t right when he started to experience frequent severe crushing chest pain in early 2021. He was an avid runner, so a heart problem may not have seemed likely. However, Brent knew to not ignore his symptoms. He went to the hospital and learned he was having a heart attack.Brent’s doctors implanted a stent in his heart to restore blood flow. The quick medical attention saved his life, but the heart attack weakened his heart’s pumping ability. This condition put him at risk for sudden cardiac arrest. As part of his recovery, his doctor recommended he wear a lifesaving wearable defibrillator known as LifeVest for protection. Watch Brent’s story on the Sudden Cardiac Arrest Foundation website.2. SCA is sudden by its very nature; often the first sign a person has this condition is that they collapse and experience cardiac arrest.SCA has no warning signs. However, there are factors that may indicate someone is at risk for SCA. For example, certain heart patients may be at increased risk, including those who have suffered a heart attack or have been newly diagnosed with heart failure.Anyone who feels they might be at risk should see a cardiologist for evaluation. If you are at risk for SCA, a doctor may recommend a wearable defibrillator, implantable cardioverter defibrillator, medications, or other measures to prevent sudden death.In Brent’s case, following his heart attack, his doctors determined he was at high risk for SCA and prescribed LifeVest, a wearable defibrillator designed to detect certain life-threatening rapid heart rhythms and automatically deliver a lifesaving treatment shock."My SCA was very immediate; I did not feel it was coming on at all," says Brent. "I was talking to my wife, and I collapsed." Learn how Brent survived sudden cardiac arrest on the Sudden Cardiac Arrest Foundation website.3.</p>
-                  <p id= "article-body-three">An SCA victim requires immediate emergency care, including CPR and a defibrillation shock — and you can help.If you witness what you think is sudden cardiac arrest, the first thing to do is to call 911 immediately before administering urgent and immediate care. After calling 911, start CPR compressions: Push hard and fast on the center of the chest. An SCA victim requires defibrillation and bystanders should seek an AED (automated external defibrillator) to provide treatment.If a patient is wearing LifeVest, which does not require third-party intervention, the device is designed to prompt bystanders to step aside while treatment is delivered. When Brent experienced SCA, he was at home in his bedroom. He suddenly lost consciousness. LifeVest detected the abnormal heart rhythm and delivered a treatment shock that saved his life."If I wasn’t wearing LifeVest that day, I have no doubt that I would have died," Brent says. "I’m just extremely grateful."With appropriate therapy, cardiac patients can often return to doing many of the things they enjoy. After experiencing both a heart attack and SCA, Brent has recovered and undergone cardiac rehab. He continues to run and is now training for a half-marathon in April.</p>
-                  <div class = "comment-section-article">
-                    <div id = "comment">
-                    <!-- begin wwww.htmlcommentbox.com -->
-                    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
-                    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-                    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24cm0Si8cshM8Q1Ic9H6mlg%2F"+"&opts=16798&num=10&ts=1648591433178");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-                    <!-- end www.htmlcommentbox.com -->
+            <div class = "body-wrapper">
+                <div class="header-container">
+                    <div id="header">
+                        <h1 id = "header-title">Can of Mysteries</h1>
+                        <p>Read and search for creative articles that examin the many cases <br> mysterious topics that can all be found <a>in the mysterious contents</a> page. <br>  <span>Created and maintained by USCA teachers and students.</span></p>
+                        <span><br><i>Searching For:</i></span>
                     </div>
                 </div>
-            </Article>
-            <div class="myGallery">
-                <div class="item">
-                    <a onClick>
-                    <img src="https://picsum.photos/190/190?11" />
-                    <span class="author">Austin Walter</span>
-                    <span class="post-time">01.16.2022</span>
-                    <span class="caption">This is an Example Title</span>
-                    <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
+                <aside class = "account-container"  id = "account-container-animation">
+                    <div id = account-user-container>
+                        <div id = "user-icon">
+                        </div>
+                        <span id="username">Austin Walter</span>
+                    </div>
+                    <div id = "account-settings-container">
+                        <a>
+                        <i id="sett-icon" class="material-icons">settings</i>
+                        <span id="settings">Settings</span>
+                        </a>
+                    </div>
+                    <div id = "account-upload-container">
+                        <a href="">
+                        <i id="Upload-icon" class="glyphicon glyphicon-upload"></i>
+                        <span id="upload">Upload</span>
+                        </a>
+                    </div>
+                </aside>
+                <div id = "grid-text-box">
+                    <span id = "text-descrip-grid"></span>
+                </div>
+                <div class = "archives">
+                    <h1>Archives</h1>
+                    <br>
                     <ul>
-                        <li>
-                            Search-term
-                        </li>
-                        <li>
-                            Search-term
-                        </li>
-                        <li>
-                            Search-term
-                        </li>
+                        <li>test</li>
                     </ul>
-                    </a>
                 </div>
+                <Article>
+                    <button class="back back--one">
+                        <span class="top-left"></span>
+                        <span class="top-right"></span>
+                        <span class="bottom-left"></span>
+                        <span class="bottom-right"></span>
+                        <span class="stalk"></span>
+                        <span class="text">BACK</span>
+                    </button>
+                    <div id="article-header">
+                        <h1 id = "article-header-title">Can of Mysteries</h1>
+                        <p id = "article-header-p"></p>
+                        <span><br><i></i></span>
+                    </div>
+                    <h1 id = "article-Author"></h1>
+                    <div class = "article-html">
 
-        </div>
-
-        <div class = "footer-wrapper">
-            <div id = "ftr-left">
-
-            </div >
-            <div id = "ftr-center">
-                <div id = "cntr-ftr-tittle">
-                   <h1> About Us</h1>
+                    </div>
+                    <div class = "comment-section-article">
+                        <div id = "comment">
+                        <!-- begin wwww.htmlcommentbox.com -->
+                        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24cm0Si8cshM8Q1Ic9H6mlg%2F"+"&opts=16798&num=10&ts=1648591433178");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                        <!-- end www.htmlcommentbox.com -->
+                        </div>
+                    </div>
+                </Article>
+                <div class="myGallery">
+                    <div class="item" id ="item:0" onClick="reply_click(this.id)">
+                        <a >
+                            <img id="item-image" src="https://picsum.photos/190/190?11" />
+                            <span class="author">Austin Walter</span>
+                            <span class="date">01.16.2022</span>
+                            <span class="title">This is an Example Title</span>
+                            <span class="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
+                            <ul id="item-tag-ul">
+                                <li id="item-CanItem"></li>
+                            </ul>
+                        </a>
+                        <div id = "hiddenHtml">
+                        </div>
+                    </div>
                 </div>
-                <div id = "cntr-ftr-content">
-                    The world is a mysterious place. The can of mystery highlights some of those mysteries. This site is a class project for Amanda Warren's English 101 class at the University of South Carolina Aiken. Articles are uploaded once a year (on average) in the fall and/or spring. If you have questions or tips on mysteries, please leave a comment or contact AmandaW at USCA dot EDU.
+                <div class = "footer-wrapper">
+                    <div id = "ftr-left">
+                    </div >
+                    <div id = "ftr-center">
+                        <div id = "cntr-ftr-title">
+                        <h1> About Us</h1>
+                        </div>
+                        <div id = "cntr-ftr-content">
+                            The world is a mysterious place. The can of mystery highlights some of those mysteries. This site is a class project for Amanda Warren's English 101 class at the University of South Carolina Aiken. Articles are uploaded once a year (on average) in the fall and/or spring. If you have questions or tips on mysteries, please leave a comment or contact AmandaW at USCA dot EDU.
+                        </div>
+                    </div>
+                    <div id = "ftr-right">
+                    </div>
                 </div>
             </div>
-            <div id = "ftr-right">
+            <div class="loader-container">
+                <div class="loader"></div>
             </div>
-        </div>
-    </div>
-    <div class="loader-container">
-        <div class="loader"></div>
-      </div>
-    <div class = "pre-loader">
-        <div id = "welcome-message">
+            <div class = "pre-loader">
+                <div id = "welcome-message">
+                    <h1 id = "welcome-message-h1">Can of Mysteries</h1>
+                    <p id = "pre-loader-Text">We sometimes forget, in our day to day lives, that the world is a very unusual place, and the people in it are sometimes even more unusual.</p>
+                    <div id = "pre-loader-author"><i>Developed By:</i> Austin Walter</div>
+                </div>
+            </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
+        <script src="script.js"></script>
+        <script>     
+            document.querySelector(".back").addEventListener("click", function(event){
+                toggleArticleShow();
+            });
+            const firebaseConfig = {
+                apiKey: "AIzaSyCFUz4czbiLnuA7M7TBVX-iECvKutd8emY",
+                authDomain: "main-blog-17ac9.firebaseapp.com",
+                projectId: "main-blog-17ac9",
+                storageBucket: "main-blog-17ac9.appspot.com",
+                messagingSenderId: "188291999968",
+                appId: "1:188291999968:web:0a0a6547af55693f270885",
+                measurementId: "G-N1ZFZZ7BQT"
+            };
+            firebase.initializeApp(firebaseConfig);
 
-            <h1 id = "welcome-message-h1">Can of Mysteries</h1>
-            <p id = "pre-loader-Text">We sometimes forget, in our day to day lives, that the world is a very unusual place, and the people in it are sometimes even more unusual.</p>
-            <div id = "pre-loader-author"><i>Developed By:</i> Austin Walter</div>
+            let articles = [];
 
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
-    <script src="script.js"></script>
-    <script>     
-    document.querySelector(".item").addEventListener("click", function(event){
-        toggleArticleShow();
-        
-    }); 
-    document.querySelector(".back").addEventListener("click", function(event){
-        toggleArticleShow();
-    });
-    </script>
-</body>
+            firebase.firestore().collection('Articles').get().then((snapshot) => { 
+
+                snapshot.docs.forEach(doc => {
+                    articles.push({ ...doc.data() });
+                })
+
+                for(let i = 0; i < articles.length; i++){
+                    let gallery = document.getElementsByClassName('myGallery');
+                    let div = document.getElementsByClassName('item');
+                    let clone = div[0].cloneNode(true);
+                    if(i == 0){
+                        $(".author").text(articles[3].author);
+                        $(".date").text(articles[3].date);
+                        $(".title").text(articles[3].tittle);
+                        $(".description").text(articles[3].description);
+                        $("#item-CanItem").text(articles[3].canItem);
+                        document.getElementById("item-image").src = articles[3].coverImage;
+                        document.getElementById("hiddenHtml").innerHTML = articles[3].html;
+
+                        var tags = (articles[3].tag1).split(",");
+                        var itemTagUl = document.getElementById("item:0").firstElementChild.childNodes[11]
+
+                        for(var j = 0; j < tags.length; j++){
+                             let li = document.createElement("li")
+                             li.textContent = tags[j];
+                             li.id = "item-tag-li"
+                             itemTagUl.append(li);
+                        }
+
+                    }else{
+                        clone.id = "item:" + i;
+
+
+
+                        clone.firstElementChild.childNodes[11].textContent = ""
+
+                        var tags = (articles[articles.length - i-1].tag1).split(",");
+                        var itemTagUl = clone.firstElementChild.childNodes[11]
+
+                        let li = document.createElement("li")
+                        li.id = "item-CanItem"
+                        itemTagUl.append(li);
+
+                        clone.querySelector("span.author").textContent = articles[articles.length - i-1].author;
+                        clone.querySelector("span.date").textContent = articles[articles.length - i-1].date;
+                        clone.querySelector("span.title").textContent = articles[articles.length - i-1].tittle;
+                        clone.querySelector("span.description").textContent = articles[articles.length - i-1].description;
+                        clone.querySelector("img#item-image").src = articles[articles.length - i-1].coverImage;
+                        clone.querySelector("li#item-CanItem").innerHTML = articles[articles.length - i-1].canItem;
+                        clone.querySelector("div#hiddenHtml").innerHTML = articles[articles.length - i-1].html;
+
+
+                        for(var j = 0; j < tags.length; j++){
+                             let li = document.createElement("li")
+                             li.textContent = tags[j];
+                             li.id = "item-tag-li"
+                             itemTagUl.append(li);
+                             console.log(tags[j])
+                        }
+
+                        gallery[0].appendChild(clone);
+                    }
+                }
+            });
+            document.querySelector("#articleSubmitBtn").addEventListener("click", function(event){
+                event.preventDefault();
+                const currentDate = new Date();
+                var innerDocument = document.getElementById('htmeditor_ifr').contentWindow.document
+                var inputJson = {
+                    title: document.getElementById("inputtitle").value,
+                    author: document.getElementById("inputFirstName").value + document.getElementById("inputLastName").value,
+                    description: document.getElementById("descriptionTextArea").value,
+                    tag1: document.getElementById("inputTag1").value,
+                    tag2: document.getElementById("inputTag2").value,
+                    tag3: document.getElementById("inputTag3").value,
+                    canItem: document.getElementById("inputCanItem").value,
+                    coverImage: document.getElementById("inputCoverImage").value,
+                    html: innerDocument.getElementById('tinymce').innerHTML,
+                    aproved: true,
+                    date:  (currentDate.getMonth() + 1) + "." +  currentDate.getFullYear()
+                };
+                firebase.firestore().collection("Articles").add(inputJson);
+            });
+            function reply_click(clicked_id){
+                console.log($("#article-title"))
+                $("#article-header-title").html(document.getElementById(clicked_id).firstElementChild.childNodes[7].innerHTML);
+                $("#article-header-p").html("");
+                $(".article-html").html(document.getElementById(clicked_id).lastElementChild.innerHTML);
+                toggleArticleShow();
+            }
+        </script>
+    </body>
 </html>
