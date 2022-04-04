@@ -234,23 +234,24 @@
                     let div = document.getElementsByClassName('item');
                     let clone = div[0].cloneNode(true);
                     if(i == 0){
-                        $(".author").text(articles[3].author);
-                        $(".date").text(articles[3].date);
-                        $(".title").text(articles[3].tittle);
-                        $(".description").text(articles[3].description);
-                        $("#item-CanItem").text(articles[3].canItem);
-                        document.getElementById("item-image").src = articles[3].coverImage;
-                        document.getElementById("hiddenHtml").innerHTML = articles[3].html;
+                        $(".author").text(articles[0].author);
+                        $(".date").text(articles[0].date);
+                        $(".title").text(articles[0].tittle);
+                        $(".description").text(articles[0].description);
+                        $("#item-CanItem").text(articles[0].canItem);
+                        document.getElementById("item-image").src = articles[0].coverImage;
+                        document.getElementById("hiddenHtml").innerHTML = articles[0].html;
 
-                        var tags = (articles[3].tag1).split(",");
+                        var tags = (articles[0].tag1).split(",");
                         var itemTagUl = document.getElementById("item:0").firstElementChild.childNodes[11]
-
+                        
                         for(var j = 0; j < tags.length; j++){
                              let li = document.createElement("li")
                              li.textContent = tags[j];
                              li.id = "item-tag-li"
                              itemTagUl.append(li);
                         }
+                        
 
                     }else{
                         clone.id = "item:" + i;

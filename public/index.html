@@ -247,14 +247,14 @@
                     let div = document.getElementsByClassName('item');
                     let clone = div[0].cloneNode(true);
                     if(i == 0){
-                        document.querySelector("span#author").textContent = blogPosts[3].author;
-                        document.querySelector("span#date").textContent = blogPosts[3].date;
-                        document.querySelector("span#title").textContent = blogPosts[3].title;
-                        document.querySelector("span#description").textContent = blogPosts[3].description;
-                        document.querySelector("img#item-image").src = blogPosts[3].coverImage;
-                        document.querySelector("li#item-CanItem").innerHTML = blogPosts[3].canItem;
+                        document.querySelector("span#author").textContent = blogPosts[blogPosts.length-1].author;
+                        document.querySelector("span#date").textContent = blogPosts[blogPosts.length-1].date;
+                        document.querySelector("span#title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("span#description").textContent = blogPosts[blogPosts.length-1].description;
+                        document.querySelector("img#item-image").src = blogPosts[blogPosts.length-1].coverImage;
+                        document.querySelector("li#item-CanItem").innerHTML = blogPosts[blogPosts.length-1].canItem;
 
-                        var tags = (blogPosts[3].tag1).split(",");
+                        var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
                         var itemTagUl = document.getElementById("item:0").firstElementChild.childNodes[11]
 
                         for(var j = 0; j < tags.length; j++){
