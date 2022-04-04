@@ -14,11 +14,7 @@ $(document).ready(function() {
 function toggleLoader(){
     $(".bookshelf-loader").fadeToggle();
 }
-function onSuccess(googleUser) {
-    $(".account-container").fadeToggle()
-    $(".ham").fadeToggle()
-    $(".body-wrapper").css("grid-template-columns", ".5fr auto 300px");
-}
+
 function onLoadAnimation(x){
     var searchBr = $('#search-br').last();
     var offBr = searchBr.offset();
@@ -80,6 +76,11 @@ var id_token = googleUser.getAuthResponse().id_token;
 
 var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
+
+console.log("made it here")
+$(".account-container").fadeToggle()
+$(".ham").fadeToggle()
+$(".body-wrapper").css("grid-template-columns", ".5fr auto 300px");
 
 }
 
