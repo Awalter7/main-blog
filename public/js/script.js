@@ -1,9 +1,24 @@
-$(document).ready(function() {
-            
-    
-    $('Article').fadeToggle();
-});
 
+
+$(document).ready(function() {
+    $(".account-container").fadeToggle();
+    $(".ham").fadeToggle()
+    $(".body-wrapper").css("grid-template-columns", "200px auto 300px");
+    const loaderInterval = setInterval(function(){
+        $(".bookshelf-loader").fadeToggle();
+        clearInterval(loaderInterval);
+    }, 1000);
+
+    
+});
+function toggleLoader(){
+    $(".bookshelf-loader").fadeToggle();
+}
+function onSuccess(googleUser) {
+    $(".account-container").fadeToggle()
+    $(".ham").fadeToggle()
+    $(".body-wrapper").css("grid-template-columns", ".5fr auto 300px");
+}
 function onLoadAnimation(x){
     var searchBr = $('#search-br').last();
     var offBr = searchBr.offset();
@@ -67,21 +82,7 @@ var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 }
-window.onscroll = function() {myFunction()};
 
-var navbar = document.getElementById("search-br");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-if (window.pageYOffset >= sticky) {
-    navbar.classList.remove("no-stick");
-    navbar.classList.add("sticky")
-    
-} else {
-    navbar.classList.add("no-stick");
-    navbar.classList.remove("sticky");
-}
-}
 let slider = document.querySelector("#slider");
 let slides = document.querySelectorAll("#slider img");
 let currentSlide = 0;
@@ -99,8 +100,11 @@ ham.addEventListener("click", function(){
         $('#user-icon').animate({left: 15}, {duration: 500});
         $('#username').fadeOut();
         $('#settings').fadeOut();
+        $('#admin').fadeOut()
         $('#upload').fadeOut();
         $('.account-container i').css("fontSize", "30px")
+        $('#Upload-icon').css("fontSize", "27px")
+        $('#admin-icon').css("fontSize", "25px")
         $('.account-container i').animate({left: 83}, {duration: 500});
         $('#account-user-container').animate({height: 100}, {duration: 500});
     }else{
@@ -112,6 +116,7 @@ ham.addEventListener("click", function(){
         $('.account-container i').css("fontSize", "20px")
         $('#username').fadeIn();
         $('#settings').fadeIn();
+        $('#admin').fadeIn();
         $('#upload').fadeIn();
         $('#account-user-container').animate({height: 120}, {duration: 500});   
     }            
@@ -178,10 +183,6 @@ document.querySelector("#account-upload-container").addEventListener("click", fu
     event.preventDefault();
 });
 
-function toggleArticleShow(){
-    $('Article').fadeToggle();
-    $('.myGallery').toggle();
-}
 
 
 
@@ -221,12 +222,10 @@ function checkCookie() {
 let username = getCookie("username");
 if (username != "") {
     $(".pre-loader").hide();
-    $('article').hide();
     $('.upload-container').hide();
     setTimeout(onLoadAnimation(0), 3000)
 
 } else {
-    $('article').hide();
     $('.upload-container').hide();
     setTimeout(animateHeadTopPos, 1000)
     setTimeout(animateHeadLftPos, 3000)
