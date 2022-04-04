@@ -405,10 +405,12 @@ body{
     height: 1300px; 
 }
 .archives{
-  padding-top: 750px;
+  padding-top: 500px;
+  padding-left: 50px;
     grid-area: right;
     z-index: 0;
     margin-bottom: 300px;
+    margin-top: 300px;
     width: 300px;
     font-family: 'Prata', serif;
     color: rgb(182, 182, 182);
@@ -709,7 +711,7 @@ body{
         "account search blank"
         "account slider  right"
         "account center  right"
-        "footer footer footer"
+        "footer footer footer";
     }
     
 }
@@ -746,6 +748,15 @@ body{
     width: 400px;
     height: auto;
   }
+  .body-wrapper{
+    grid-template:  
+        "account search search" 
+        "account slider right"
+        "account center  right"
+        "footer footer footer";
+    grid-template-rows: auto 400px auto auto ;
+    grid-template-columns: .5fr auto 300px;
+}
 
 .myGallery .description{
   left: 9px;
@@ -1172,15 +1183,6 @@ p{
   margin-left: -1.2rem;
   transition: margin-left 0.5s 0.8s, opacity 0.3s 0.5s;
 }
-.pre-loader{
-  background-color: #111111;
-  padding-top: 100px;
-  position: fixed;
-  top: 0px;
-  z-index: 40;
-  height: 100%;
-  width: 100%;
-}
 
 #welcome-message h1{
   text-align: left;
@@ -1195,20 +1197,8 @@ p{
   height: 100%;
   width: 100%;
 }
-#pre-loader-Text{
-  color: rgb(182, 182, 182);
-  position: relative;
-  top: 250px;
-}
-#pre-loader-author{
-  color: rgb(182, 182, 182);
-  position: relative;
-  font-family: 'Abril Fatface', cursive;
-  left: 20%;
-  font-size: larger;
-  top: 252px;
-  text-decoration-style: wavy;
-}
+
+
 #page-body{
   grid-area: search / center / center;
   background-color: white;
@@ -1219,27 +1209,7 @@ p{
   position: relative;
 
 }
-.loader-container{
-  z-index: 100;
-  width: 100%;
-  height: 100vh;
-  background-color: #111;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.loader{
-  z-index: 100;
-  width: 50px;
-  height: 50px;
-  border: 5px solid;
-  color: #3498db;
-  border-radius: 50%;
-  border-top-color: transparent;
-  animation: loader 1.2s linear infinite;
-}
 
 @keyframes loader{
   25%{
@@ -1320,7 +1290,7 @@ p{
   height: 120px;
   opacity: 0;
   background-color: #111111;
-  border: 5px solid white;
+  border: 5px solid rgb(182, 182, 182);e;
   transform-origin: bottom left;
   transform: translateX(300px);
   -webkit-animation: travel 2500ms linear infinite;
@@ -1337,7 +1307,7 @@ p{
   left: 0;
   width: 100%;
   height: 5px;
-  background-color: white;
+  background-color: rgb(182, 182, 182);;
 }
 .book_item.first:after {
   top: initial;
@@ -1351,8 +1321,8 @@ p{
   left: 0;
   width: 100%;
   height: 17.5px;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
+  border-top: 5px solid rgb(182, 182, 182);;
+  border-bottom: 5px solid rgb(182, 182, 182);;
 }
 .book_item.second:after, .book_item.fifth:after {
   top: initial;
@@ -1367,7 +1337,7 @@ p{
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid rgb(182, 182, 182);;
 }
 .book_item.third:after {
   top: initial;
@@ -1385,8 +1355,8 @@ p{
   left: 0;
   width: 100%;
   height: 17.5px;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
+  border-top: 5px solid rgb(182, 182, 182);;
+  border-bottom: 5px solid rgb(182, 182, 182);;
 }
 .book_item.fifth {
   top: -100px;
@@ -1404,7 +1374,7 @@ p{
   left: 0px;
   width: 100%;
   height: 5px;
-  background-color: white;
+  background-color: rgb(182, 182, 182);;
 }
 .book_item.sixth:after {
   box-sizing: border-box;
@@ -1415,7 +1385,7 @@ p{
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid rgb(182, 182, 182);;
 }
 .book_item:nth-child(2) {
   -webkit-animation-delay: 416.6666666667ms;
@@ -1442,7 +1412,7 @@ p{
   width: 300px;
   height: 5px;
   margin: 0 auto;
-  background-color: white;
+  background-color: rgb(182, 182, 182);
   position: relative;
 }
 .shelf:before, .shelf:after {

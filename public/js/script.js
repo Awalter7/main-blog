@@ -32,32 +32,11 @@ function onLoadAnimation(x){
     tween.play();
 }
 function preLoaderFadeout(){
-    $(".pre-loader").fadeOut();
     $('body').css('overflow', "scroll");
     $('body').css('overflow-x', "hidden");
 }
-function animateHeadTopPos(){
-    var title = $('#header-title').last();
-    var offsettitle = title.offset();
-    var message = $('#welcome-message-h1').last();
-    var offsetMessage = message.offset();
 
 
-    var offsetFinalY = offsetMessage.top - offsettitle.top  
-    var tween = gsap.to("#welcome-message-h1", {duration: 2, y: "-" + offsetFinalY});
-    tween.play();
-}
-function animateHeadLftPos(){
-    var title = $('#header-title').last();
-    var offsettitle = title.offset();
-    var message = $('#welcome-message-h1').last();
-    var offsetMessage = message.offset();
-
-    var offsetFinalX = offsetMessage.left - offsettitle.left
-    var tween = gsap.to("#welcome-message-h1", {duration: 2, x: "-" + offsetFinalX});
-    tween.play();
-
-}
 
 function onFailure(error) {
 console.log(error);
@@ -222,14 +201,11 @@ return "";
 function checkCookie() {
 let username = getCookie("username");
 if (username != "") {
-    $(".pre-loader").hide();
     $('.upload-container').hide();
     setTimeout(onLoadAnimation(0), 3000)
 
 } else {
     $('.upload-container').hide();
-    setTimeout(animateHeadTopPos, 1000)
-    setTimeout(animateHeadLftPos, 3000)
     setTimeout(onLoadAnimation(2), 3000)
     setTimeout(preLoaderFadeout, 5000)
     username = Math.random().toString(36).substr(2, 9);
