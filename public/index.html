@@ -171,20 +171,22 @@
                     <span id = "text-descrip-grid"></span>
                 </div>
                 <div class = "archives">
-                    <h1>Archives</h1>
+                    <h1 id = "widget-header">Archives</h1>
                     <br>
                     <ul>
                         <li>test</li>
                     </ul>
                 </div>
                 <div class = "suggestions">
-                    <Span>Most Liked</Span>
+                    <h1 id = "widget-header">Most Liked</h1>
                     <div class="suggestion-likes" id ="suggestion-likes:0" onClick="reply_click(this.id)">
                         <a >
                             <img id="suggestion-likes-image" src="https://picsum.photos/190/190?11" />
-                            <span id="suggestion-likes-author">Austin Walter</span>
-                            <span id="suggestion-likes-date">01.16.2022</span>
                             <span id="suggestion-likes-title">This is an Example Title</span>
+                            <br>
+                            <span id="suggestion-likes-author">Austin Walter</span>
+                            <br>
+                            <span id="suggestion-likes-date">01.16.2022</span>
                         </a>
                     </div>
 
@@ -366,7 +368,7 @@
                 });
                 
             firebase.firestore().collection('blog-posts').orderBy("views").get().then((snapshot) => { 
-                $(".suggestions").append("<span>Most Clicked</span><div class='suggestion-views' id ='suggestion-views:0' onClick='reply_click(this.id)'><a ><img id='suggestion-views-image' src='https://picsum.photos/190/190?11' /><span id='suggestion-views-author'>Austin Walter</span><span id='suggestion-views-date'>01.16.2022</span><span id='suggestion-views-title'>This is an Example Title</span></a></div>")
+                $(".suggestions").append("<h1 id='widget-header'>Most Clicked</h1><div class='suggestion-clicks' id ='suggestion-clicks:0' onClick='reply_click(this.id)'><a ><img id='suggestion-clicks-image' src='https://picsum.photos/190/190?11' /><span id='suggestion-clicks-title'>This is an Example Title</span><br><span id='suggestion-clicks-author'>Austin Walter</span><br><span id='suggestion-clicks-date'>01.16.2022</span></a></div>")
             
                 snapshot.docs.forEach(doc => {
                     blogPosts .push({ ...doc.data() });
@@ -374,37 +376,37 @@
 
                 for(let i = 0; i < blogPosts .length; i++){
                     let sugesttions = document.getElementsByClassName('suggestions');
-                    let div = document.getElementsByClassName('suggestion-views');
+                    let div = document.getElementsByClassName('suggestion-clicks');
                     let clone = div[0].cloneNode(true);
                     if(i == 0){
-                        document.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length-1].author;
-                        document.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length-1].date;
-                        document.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length-1].title;
-                        document.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length-1].coverImage;
+                        document.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length-1].author;
+                        document.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length-1].date;
+                        document.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length-1].coverImage;
 
                         var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
-                        document.getElementById('suggestion-views:0').style.height = "min-content";
+                        document.getElementById('suggestion-clicks:0').style.height = "min-content";
 
                     }else if(i == 1){
-                        cloneId = "suggestion-views:" + i;
+                        cloneId = "suggestion-clicks:" + i;
                         clone.id = cloneId;
 
-                        clone.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length - i-1].author;
-                        clone.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length - i-1].date;
-                        clone.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length - i-1].title;
-                        clone.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+                        clone.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
                         document.getElementById(cloneId).style.height = "min-content";
                     }
                     else if(i == 2){
-                        cloneId = "suggestion-views:" + i;
+                        cloneId = "suggestion-clicks:" + i;
                         clone.id = cloneId;
 
-                        clone.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length - i-1].author;
-                        clone.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length - i-1].date;
-                        clone.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length - i-1].title;
-                        clone.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+                        clone.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
                         document.getElementById(cloneId).style.height = "min-content";
@@ -430,9 +432,9 @@
                 firebase.firestore().collection("blog-posts").doc((document.getElementById("inputtitle").value.split(" ").join("-"))).set(inputJson)
             });
             function reply_click(id){
-                var linkTittle = "http://127.0.0.1:5501/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
+                var linkTittle = "http://awalter7.github.io/main-blog/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
                 checkArticleClickedCookie(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-"));
-                
+                window.location = linkTittle;
             }
             function setArticleClickedCookie(cname, exdays) {
                 const d = new Date();

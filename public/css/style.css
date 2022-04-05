@@ -438,9 +438,9 @@ body{
   margin-left: -35px;
   border-right: 1px solid rgba(128, 125, 125, 0.61);
 }
-.archives h1{
+#widget-header{
   font-family: 'Abril Fatface', cursive;
-  font-weight: 500;
+  font-weight: 100;
   font-size: 25px;
 }
 
@@ -496,20 +496,7 @@ body{
     overflow: hidden;
   }
   .myGallery  .item p{
-    height: 100px;
-    overflow: scroll;
-    
-      mask-image: linear-gradient(transparent,
-          black 20%,
-          black 80%,
-          transparent 100%);
-      -webkit-mask-image: linear-gradient(transparent,
-          black 20%,
-          black 80%,
-          transparent 100%);
-  }
-  .myGallery  .item p::-webkit-scrollbar {
-    display: none;
+    text-decoration: none;
   }
   .myGallery .item img {
     float: left;
@@ -1565,25 +1552,35 @@ p{
   width: 100px;
   height: 40%;
 }
-.suggestion-likes, .suggestion-views {
+.suggestion-likes, .suggestion-clicks {
   margin: 0 auto ; 
   z-index: 0;
   padding: 20px;
   border-radius: 10px;
-  width: 600px;
   transition: all .2s ease-in-out; 
   position: relative;
   overflow: hidden;
+  width: 200px;
+  align-content: flex-start;
+  height: auto;
 }
-
-.suggestion-views img, .suggestion-likes img {
+.suggestion-clicks img, .suggestion-likes img {
   float: left;
   min-width: 100%;
   height: auto;
   vertical-align: middle;
 }
-
-.suggestion-views, .suggestion-likes{
-  width: 200px;
-  height: auto;
+.suggestion-clicks span, .suggestion-likes span{
+  text-align: left;
+  font-size: 10px;
+  min-width: 100%;
+  position: relative;
+  float: left;
+}
+#suggestion-likes-title, #suggestion-clicks-title{
+  font-size: 15px;
+  text-align: center;
+}
+#suggestion-likes-author, #suggestion-clicks-author, #suggestion-clicks-date, #suggestion-likes-date{
+  margin-left: 10px;
 }
