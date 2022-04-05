@@ -58,12 +58,21 @@ var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 console.log("made it here")
+$(".google g-signin2").hide();
+$("sign-out").css("visibility", "visible");
 $(".account-container").fadeToggle()
 $(".ham").fadeToggle()
 $(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
 }
-
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+      $(".google g-signin2").css("visibility", "visible");
+        $("sign-out").hide();
+    });
+}
 let slider = document.querySelector("#slider");
 let slides = document.querySelectorAll("#slider img");
 let currentSlide = 0;
