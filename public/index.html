@@ -434,7 +434,7 @@
             function reply_click(id){
                 var linkTittle = "http://awalter7.github.io/main-blog/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
                 checkArticleClickedCookie(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-"));
-                window.location = linkTittle
+                
             }
             function setArticleClickedCookie(cname, exdays) {
                 const d = new Date();
@@ -461,7 +461,7 @@
 
                 let articleClick = getArticleClickedCookie(cname);
                 if (articleClick != "=clicked") {
-
+                    
                     setArticleClickedCookie(cname, 365);
                     firebase.firestore().collection('blog-posts').doc(cname).get().then(function (doc) {
                         if (doc.exists) {
@@ -470,6 +470,7 @@
                             var numViews =  docRef.views;
                             docRef.views = numViews +1;
                             firebase.firestore().collection('blog-posts').doc(cname).set(docRef)
+                            
                         } else {
                             // doc.data() will be undefined in this case
                             console.log('No such document!');
@@ -480,6 +481,7 @@
                     });
 
                 }
+                window.location = linkTittle
             }
         </script>
     </body>
