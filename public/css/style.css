@@ -968,8 +968,8 @@ nav{
   .sign-out{
     position: relative;
     float: right;
+    visibility: hidden;
     width: min-content;
-    top: -75px;
     height: 37px;
     width: 200px;
     text-align: center;
