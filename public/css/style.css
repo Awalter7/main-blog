@@ -64,7 +64,8 @@ input{
     top: -10px;
     width: 100%;
     display: grid;
-    height: auto;
+    height:fit-content;
+    overflow: hidden;
     grid-template: "slider" "gallery" "side";
     column-gap: 10px;
 }
@@ -414,27 +415,38 @@ body{
     width: 300px;
     height: 1300px; 
 }
-.archives{
+.archives, .suggestions{
   padding-top: 200px;
   padding-left: 50px;
-    grid-area: right;
-    z-index: 0;
-    margin-bottom: 300px;
-    margin-top: 300px;
-    width: 300px;
-    font-family: 'Prata', serif;
-    color: rgb(182, 182, 182);
-    border-left: 1px solid rgba(128, 125, 125, 0.61);
-    top: 100px;
-    min-height: 2000px; 
+  z-index: 0;
+  margin-bottom: 300px;
+  margin-top: 300px;
+  font-family: 'Prata', serif;
+  color: rgb(182, 182, 182);
+  top: 100px;
+  min-height: 2000px; 
+}
+.archives{
+  width: 250px;
+  grid-area: right;
+  border-left: 1px solid rgba(128, 125, 125, 0.61);
+}
+.suggestions{
+  text-align: center;
+  width: 300px;
+  grid-area: left;
+  margin-left: -35px;
+  border-right: 1px solid rgba(128, 125, 125, 0.61);
 }
 .archives h1{
   font-family: 'Abril Fatface', cursive;
   font-weight: 500;
   font-size: 25px;
 }
+
 .myGallery {
     top: 100px;
+    zoom: 90%;
     grid-area: center;
     display: grid;
     grid-gap: 90px;
@@ -442,19 +454,17 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     position: relative;
     margin-right: 100px;
-    height:fit-content;
+    height: fit-content;
     margin-top: 20px;
     font-size: 1rem;
   }
+  .myGallery::-webkit-scrollbar {
+    display: none;
+}
   .myGallery .item ul{
     list-style: none;
   }  
-  #ArchiveList ul {
-    list-style: none;
 
-    list-style-image: none;
-    border-width: 0;
-}
 .myGallery .item ul li{
     position: relative;
     padding: 5px;
@@ -475,15 +485,8 @@ body{
     width: 100px;
     height: 40%;
   }
-  .myGallery img:hover{
-    transform: scale(1.1);
-  }
   .myGallery .item {
     margin: 0 auto ; 
-    box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
-    background-color: rgba(227, 233, 233, 0.068);
     z-index: 0;
     padding: 20px;
     border-radius: 10px;
@@ -492,12 +495,35 @@ body{
     position: relative;
     overflow: hidden;
   }
+  .myGallery  .item p{
+    height: 100px;
+    overflow: scroll;
+    
+      mask-image: linear-gradient(transparent,
+          black 20%,
+          black 80%,
+          transparent 100%);
+      -webkit-mask-image: linear-gradient(transparent,
+          black 20%,
+          black 80%,
+          transparent 100%);
+  }
+  .myGallery  .item p::-webkit-scrollbar {
+    display: none;
+  }
   .myGallery .item img {
     float: left;
     min-width: 100%;
     height: auto;
     vertical-align: middle;
   }
+  #ArchiveList ul {
+    list-style: none;
+
+    list-style-image: none;
+    border-width: 0;
+}
+
   .back{
       z-index: -1;
       position: relative;
@@ -1550,4 +1576,34 @@ p{
     opacity: 0;
     transform: translateX(0px) rotateZ(-90deg);
   }
+}
+.suggestions img  {
+  transition: all .2s ease-in-out; 
+  box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
+  width: 100px;
+  height: 40%;
+}
+.suggestion-likes, .suggestion-views {
+  margin: 0 auto ; 
+  z-index: 0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  transition: all .2s ease-in-out; 
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestion-views img, .suggestion-likes img {
+  float: left;
+  min-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.suggestion-views, .suggestion-likes{
+  width: 200px;
+  height: auto;
 }

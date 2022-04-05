@@ -27,12 +27,12 @@
             @media(min-width: 900px){
                 .body-wrapper{
                     grid-template:  
-                        "account search search" 
-                        "account slider right"
-                        "account center  right"
-                        "footer footer footer";
+                        "account search search search" 
+                        "account left slider right"
+                        "account left center  right"
+                        "footer footer footer footer";
                     grid-template-rows: 0px 350px auto auto ;
-                    grid-template-columns: .5fr auto 300px;
+                    grid-template-columns: .5fr 200px auto 200px;
                 }
             }
         </style>
@@ -133,7 +133,7 @@
                     <div class="google g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="35"  data-theme="dark" style="position: relative; left: -150px; margin-top: -75px; float: right;"></div>
                 </div>  
             </div>
-            <div class = "body-wrapper">
+            <div class = "body-wrapper" id="home-body-wrapper">
                 <div class="header-container">
                     <div id="header">
                         <h1 id = "header-title">Can of Mysteries</h1>
@@ -175,6 +175,18 @@
                     <ul>
                         <li>test</li>
                     </ul>
+                </div>
+                <div class = "suggestions">
+                    <Span>Most Liked</Span>
+                    <div class="suggestion-likes" id ="suggestion-likes:0" onClick="reply_click(this.id)">
+                        <a >
+                            <img id="suggestion-likes-image" src="https://picsum.photos/190/190?11" />
+                            <span id="suggestion-likes-author">Austin Walter</span>
+                            <span id="suggestion-likes-date">01.16.2022</span>
+                            <span id="suggestion-likes-title">This is an Example Title</span>
+                        </a>
+                    </div>
+
                 </div>
                 <div class="myGallery">
                     <div class="item" id ="item:0" onClick="reply_click(this.id)">
@@ -223,6 +235,7 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
         <script src="js/script.js"></script>
         <script>     
+        
             const firebaseConfig = {
                 apiKey: "AIzaSyCFUz4czbiLnuA7M7TBVX-iECvKutd8emY",
                 authDomain: "main-blog-17ac9.firebaseapp.com",
@@ -264,6 +277,7 @@
                              itemTagUl.append(li);
                         }
 
+                        
                         document.getElementById('item:0').style.height = "min-content";
 
                     }else{
@@ -303,6 +317,99 @@
                     }
                 }
             });
+            firebase.firestore().collection('blog-posts').orderBy("likes").get().then((snapshot) => { 
+
+                snapshot.docs.forEach(doc => {
+                    blogPosts .push({ ...doc.data() });
+                })
+
+                for(let i = 0; i < blogPosts .length; i++){
+                    let sugesttions = document.getElementsByClassName('suggestions');
+                    let div = document.getElementsByClassName('suggestion-likes');
+                    let clone = div[0].cloneNode(true);
+                    if(i == 0){
+                        document.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length-1].author;
+                        document.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length-1].date;
+                        document.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length-1].coverImage;
+
+                        var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
+                        document.getElementById('suggestion-likes:0').style.height = "min-content";
+
+                    }else if(i == 1){
+                        cloneId = "suggestion-likes:" + i;
+                        clone.id = cloneId;
+
+                        clone.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+
+                        sugesttions[0].appendChild(clone);
+                        document.getElementById(cloneId).style.height = "min-content";
+                    }
+                    else if(i == 2){
+                        cloneId = "suggestion-likes:" + i;
+                        clone.id = cloneId;
+
+                        clone.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+
+                        sugesttions[0].appendChild(clone);
+                        document.getElementById(cloneId).style.height = "min-content";
+                    }
+                }
+
+                });
+                
+            firebase.firestore().collection('blog-posts').orderBy("views").get().then((snapshot) => { 
+                $(".suggestions").append("<span>Most Clicked</span><div class='suggestion-views' id ='suggestion-views:0' onClick='reply_click(this.id)'><a ><img id='suggestion-views-image' src='https://picsum.photos/190/190?11' /><span id='suggestion-views-author'>Austin Walter</span><span id='suggestion-views-date'>01.16.2022</span><span id='suggestion-views-title'>This is an Example Title</span></a></div>")
+            
+                snapshot.docs.forEach(doc => {
+                    blogPosts .push({ ...doc.data() });
+                })
+
+                for(let i = 0; i < blogPosts .length; i++){
+                    let sugesttions = document.getElementsByClassName('suggestions');
+                    let div = document.getElementsByClassName('suggestion-views');
+                    let clone = div[0].cloneNode(true);
+                    if(i == 0){
+                        document.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length-1].author;
+                        document.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length-1].date;
+                        document.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length-1].coverImage;
+
+                        var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
+                        document.getElementById('suggestion-views:0').style.height = "min-content";
+
+                    }else if(i == 1){
+                        cloneId = "suggestion-views:" + i;
+                        clone.id = cloneId;
+
+                        clone.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+
+                        sugesttions[0].appendChild(clone);
+                        document.getElementById(cloneId).style.height = "min-content";
+                    }
+                    else if(i == 2){
+                        cloneId = "suggestion-views:" + i;
+                        clone.id = cloneId;
+
+                        clone.querySelector("span#suggestion-views-author").textContent = blogPosts[blogPosts.length - i-1].author;
+                        clone.querySelector("span#suggestion-views-date").textContent = blogPosts[blogPosts.length - i-1].date;
+                        clone.querySelector("span#suggestion-views-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("img#suggestion-views-image").src = blogPosts[blogPosts.length - i-1].coverImage;
+
+                        sugesttions[0].appendChild(clone);
+                        document.getElementById(cloneId).style.height = "min-content";
+                    }
+                }
+                });
             document.querySelector("#articleSubmitBtn").addEventListener("click", function(event){
                 event.preventDefault();
                 const currentDate = new Date();
@@ -322,10 +429,53 @@
                 firebase.firestore().collection("blog-posts").doc((document.getElementById("inputtitle").value.split(" ").join("-"))).set(inputJson)
             });
             function reply_click(id){
-                console.log(id)
-                console.log(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.split(" ").join("-"))
                 var linkTittle = "http://127.0.0.1:5501/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
-                window.location=linkTittle;
+                checkArticleClickedCookie(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-"));
+                
+            }
+            function setArticleClickedCookie(cname, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=clicked" + ";" + expires + ";path=/";
+            }
+            function getArticleClickedCookie(cname) {
+            let name = cname;
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+            }
+            function checkArticleClickedCookie(cname) {
+
+                let articleClick = getArticleClickedCookie(cname);
+                if (articleClick != "=clicked") {
+
+                    setArticleClickedCookie(cname, 365);
+                    firebase.firestore().collection('blog-posts').doc(cname).get().then(function (doc) {
+                        if (doc.exists) {
+                            var docRef = doc.data()
+                            console.log(doc.data())
+                            docRef.views = docRef.views+1;
+                            firebase.firestore().collection('blog-posts').doc(cname).set(docRef)
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log('No such document!');
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log('Error getting document:', error);
+                    });
+
+                }
             }
         </script>
     </body>

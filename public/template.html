@@ -281,8 +281,7 @@
         var documentID = $.getUrlVar('contentId');
         console.log(documentID);
 
-        firebase
-          .firestore().collection('blog-posts').doc(documentID).get().then(function (doc) {
+        firebase.firestore().collection('blog-posts').doc(documentID).get().then(function (doc) {
             if (doc.exists) {
               $('#article-header-title').html(doc.data().title);
               $('.article-html').html(doc.data().html);
@@ -301,7 +300,7 @@
           })
           .catch(function (error) {
             console.log('Error getting document:', error);
-          });
+        });
       });
     </script>
   </body>
