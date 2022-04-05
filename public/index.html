@@ -432,7 +432,6 @@
                 firebase.firestore().collection("blog-posts").doc((document.getElementById("inputtitle").value.split(" ").join("-"))).set(inputJson)
             });
             function reply_click(id){
-                var linkTittle = "http://awalter7.github.io/main-blog/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
                 checkArticleClickedCookie(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-"));
                 
             }
@@ -481,6 +480,7 @@
                     });
 
                 }
+                var linkTittle = "http://awalter7.github.io/main-blog/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
                 window.location = linkTittle
             }
         </script>
