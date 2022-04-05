@@ -434,7 +434,7 @@
             function reply_click(id){
                 var linkTittle = "http://127.0.0.1:5501/public/template.html?contentId=" + document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-")
                 checkArticleClickedCookie(document.getElementById(id).childNodes[1].childNodes[7].innerHTML.trim().split(" ").join("-"));
-                
+                window.location = linkTittle
             }
             function setArticleClickedCookie(cname, exdays) {
                 const d = new Date();
