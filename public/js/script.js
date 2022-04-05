@@ -44,9 +44,8 @@ console.log(error);
 }
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
-console.log(document.getElementsByClassName(".abcRioButtonContentWrapper").lastElementChild)
-var signInSpan = document.getElementsByClassName(".abcRioButtonContentWrapper").lastChild();
-signInSpan.innerText("Sign Out")
+document.getElementsByClassName(".connectedeips8grnz9za").innerText = "Sign out"
+
 var profile = googleUser.getBasicProfile();
 
 // The ID token you need to pass to your backend:
