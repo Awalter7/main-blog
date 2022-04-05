@@ -965,20 +965,6 @@ nav{
   .google{
     border: 1px solid rgba(128, 125, 125, 0.61);
   }
-  .sign-out{
-    position: relative;
-    float: right;
-    visibility: hidden;
-    width: min-content;
-    height: 37px;
-    width: 200px;
-    text-align: center;
-    padding: 7px;
-    color: white;
-    margin-right: 50px;
-    background-color: #171717;
-    border: 1px solid rgba(128, 125, 125, 0.61);
-  }
 article{
   background-color: #111111;
   color: rgb(182, 182, 182);

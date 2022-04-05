@@ -44,34 +44,27 @@ console.log(error);
 }
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
+abcRioButtonContentWrapper
+var signInButton = document.getElementsByClassName("abcRioButtonContentWrapper").childNodes[2];
+signInButton.innerText("Sign Out")
 var profile = googleUser.getBasicProfile();
 
 // The ID token you need to pass to your backend:
 var id_token = googleUser.getAuthResponse().id_token;
 
- var profile = googleUser.getBasicProfile()
+var profile = googleUser.getBasicProfile()
 
- var element = document.querySelector('#username')
- element.innerText = profile.getName();
+var element = document.querySelector('#username')
+element.innerText = profile.getName();
 
 var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 console.log("made it here")
-$(".google g-signin2").hide();
-$("sign-out").css("visibility", "visible");
 $(".account-container").fadeToggle()
 $(".ham").fadeToggle()
 $(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
-}
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      $(".google g-signin2").css("visibility", "visible");
-        $("sign-out").hide();
-    });
 }
 let slider = document.querySelector("#slider");
 let slides = document.querySelectorAll("#slider img");
