@@ -60,7 +60,7 @@ document.getElementById("user-icon").style.backgroundImage = imageUrl
 console.log("made it here")
 $(".account-container").fadeToggle()
 $(".ham").fadeToggle()
-$(".body-wrapper").css("grid-template-columns", ".5fr auto 300px");
+$(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
 }
 
