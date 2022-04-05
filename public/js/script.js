@@ -44,8 +44,8 @@ console.log(error);
 }
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
-console.log(document.getElementsByClassName(".connectedeips8grnz9za").innerText)
-document.getElementsByClassName(".connectedeips8grnz9za").innerText = "Sign out"
+console.log(document.getElementsByClassName("#connectedeips8grnz9za").innerText)
+document.getElementsByClassName("#connectedeips8grnz9za").innerText = "Sign out"
 
 var profile = googleUser.getBasicProfile();
 
