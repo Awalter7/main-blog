@@ -44,7 +44,6 @@ console.log(error);
 }
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
-abcRioButtonContentWrapper
 console.log(document.getElementsByClassName(".abcRioButtonContentWrapper").lastChild())
 var signInSpan = document.getElementsByClassName(".abcRioButtonContentWrapper").lastChild();
 signInSpan.innerText("Sign Out")
