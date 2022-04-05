@@ -44,7 +44,7 @@ console.log(error);
 }
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
-console.log(document.getElementsByClassName(".abcRioButtonContentWrapper").lastChild())
+console.log(document.getElementsByClassName(".abcRioButtonContentWrapper").lastElementChild.innerHTML)
 var signInSpan = document.getElementsByClassName(".abcRioButtonContentWrapper").lastChild();
 signInSpan.innerText("Sign Out")
 var profile = googleUser.getBasicProfile();
