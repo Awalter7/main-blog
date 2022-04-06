@@ -1,8 +1,6 @@
 
 
 $(document).ready(function() {
-    $(".account-container").fadeToggle();
-    $(".ham").fadeToggle()
     $(".body-wrapper").css("grid-template-columns", "100px auto 250px");
     $("#home-body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
     const loaderInterval = setInterval(function(){
@@ -58,9 +56,8 @@ element.innerText = profile.getName();
 var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
-console.log("made it here")
-$(".account-container").hide();
-$(".ham").hide()
+$(".account-container").css("visibility", "visibile");
+$(".ham").css("visibility", "visibile");
 $(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
 }
