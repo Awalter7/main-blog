@@ -59,8 +59,8 @@ var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 console.log("made it here")
-$(".account-container").fadeToggle()
-$(".ham").fadeToggle()
+$(".account-container").hide();
+$(".ham").hide()
 $(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
 }
