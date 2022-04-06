@@ -187,6 +187,8 @@
                             <span id="suggestion-likes-author">Austin Walter</span>
                             <br>
                             <span id="suggestion-likes-date">01.16.2022</span>
+                            <br>
+                            <span id="suggestion-likes-description">Example</span>
                         </a>
                     </div>
 
@@ -334,6 +336,7 @@
                         document.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length-1].author;
                         document.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length-1].postDate;
                         document.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("span#suggestion-likes-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         document.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length-1].coverImage;
 
                         var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
@@ -346,6 +349,7 @@
                         clone.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length - i-1].author;
                         clone.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length - i-1].postDate;
                         clone.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("span#suggestion-likes-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         clone.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
@@ -358,6 +362,7 @@
                         clone.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length - i-1].author;
                         clone.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length - i-1].postDate;
                         clone.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("span#suggestion-likes-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         clone.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
@@ -368,7 +373,7 @@
                 });
                 
             firebase.firestore().collection('blog-posts').orderBy("views").get().then((snapshot) => { 
-                $(".suggestions").append("<h1 id='widget-header'>Popular</h1><div class='suggestion-clicks' id ='suggestion-clicks:0' onClick='reply_click(this.id)'><a ><img id='suggestion-clicks-image' src='https://picsum.photos/190/190?11' /><span id='suggestion-clicks-title'>This is an Example Title</span><br><span id='suggestion-clicks-author'>Austin Walter</span><br><span id='suggestion-clicks-date'>01.16.2022</span></a></div>")
+                $(".suggestions").append("<h1 id='widget-header'>Popular</h1><div class='suggestion-clicks' id ='suggestion-clicks:0' onClick='reply_click(this.id)'><a ><img id='suggestion-clicks-image' src='https://picsum.photos/190/190?11' /><span id='suggestion-clicks-title'>This is an Example Title</span><br><span id='suggestion-clicks-author'>Austin Walter</span><br><span id='suggestion-clicks-date'>01.16.2022</span><br><span id='suggestion-clicks-description'>Example</span></a></div>")
             
                 snapshot.docs.forEach(doc => {
                     blogPosts .push({ ...doc.data() });
@@ -382,6 +387,7 @@
                         document.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length-1].author;
                         document.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length-1].postDate;
                         document.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length-1].title;
+                        document.querySelector("span#suggestion-clicks-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         document.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length-1].coverImage;
 
                         var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
@@ -394,6 +400,7 @@
                         clone.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length - i-1].author;
                         clone.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length - i-1].postDate;
                         clone.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("span#suggestion-clicks-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         clone.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
@@ -406,6 +413,7 @@
                         clone.querySelector("span#suggestion-clicks-author").textContent = blogPosts[blogPosts.length - i-1].author;
                         clone.querySelector("span#suggestion-clicks-date").textContent = blogPosts[blogPosts.length - i-1].postDate;
                         clone.querySelector("span#suggestion-clicks-title").textContent = blogPosts[blogPosts.length - i-1].title;
+                        clone.querySelector("span#suggestion-clicks-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
                         clone.querySelector("img#suggestion-clicks-image").src = blogPosts[blogPosts.length - i-1].coverImage;
 
                         sugesttions[0].appendChild(clone);
