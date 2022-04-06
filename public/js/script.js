@@ -202,11 +202,9 @@ return "";
 function checkUserCookie() {
 let username = getUserCookie("username");
 if (username != "") {
-    $('.upload-container').hide();
     setTimeout(onLoadAnimation(0), 3000)
 
 } else {
-    $('.upload-container').hide();
     setTimeout(onLoadAnimation(2), 3000)
     setTimeout(preLoaderFadeout, 5000)
     username = Math.random().toString(36).substr(2, 9);

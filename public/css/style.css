@@ -396,14 +396,7 @@ body{
   font-weight: 500;
   font-family: 'Raleway', sans-serif;
 }
-#header span{
-  grid-area: s;
-  font-size:  15px;
-  text-align: left;
-  float: left;
-  padding: 10px;
-  color: rgb(131, 128, 128);
-}
+
 
 #header span:nth-child(3){
   color: rgb(231, 231, 231);
@@ -534,7 +527,6 @@ body{
     width: 100%;
     max-height: 100%;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0);
     color: rgb(153, 151, 151);
   }
   #date{
@@ -548,7 +540,6 @@ body{
     width: 100%;
     max-height: 100%;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0);
     color: rgb(136, 133, 133);
   }
   .myGallery #title {
@@ -569,7 +560,6 @@ body{
     text-align: left;
     box-sizing: border-box;
     font-size: 14px;
-    background: rgba(0, 0, 0, 0);
     color: rgb(136, 133, 133);
   }
   #description{
@@ -581,7 +571,6 @@ body{
     max-height: 100%;
     box-sizing: border-box;
     font-size: 14px;
-    background: rgba(0, 0, 0, 0);
     color: rgb(136, 133, 133);
   }  
   
@@ -874,6 +863,7 @@ nav{
     background-color: rgb(37, 36, 36);
     position: relative;
     top: 1100px;
+    visibility: hidden;
     grid-area: account ;
     z-index: 41;
     width: 150px;
@@ -884,6 +874,7 @@ nav{
     background-color: rgba(255, 255, 255, 0);
 }
 .ham {
+  visibility: hidden;
     position: absolute;
     z-index: 13;
     width: 50px;
@@ -1013,6 +1004,7 @@ padding-top: 10%;
 
 .upload-container{
   position: fixed;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.479);
   width: 100vw;
   height: 100vh;
@@ -1263,6 +1255,7 @@ p{
 #HCB_comment_box label, #HCB_comment_box #hcb_settings{
   background-color: white;
 }
+
 .bookshelf-loader{
   position: fixed;
   top: 0px;
@@ -1564,6 +1557,9 @@ p{
   align-content: flex-start;
   height: auto;
 }
+#suggestion-likes-description, #suggestion-views-description{
+  margin-top: 5px;
+}
 .suggestion-clicks img, .suggestion-likes img {
   float: left;
   min-width: 100%;
@@ -1578,9 +1574,39 @@ p{
   float: left;
 }
 #suggestion-likes-title, #suggestion-clicks-title{
+  margin-top: 5px;
   font-size: 15px;
   text-align: center;
 }
-#suggestion-likes-author, #suggestion-clicks-author, #suggestion-clicks-date, #suggestion-likes-date{
-  margin-left: 10px;
+
+.animated-background, .animated-background-img {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background-color: rgb(182, 182, 182);
+  background: linear-gradient(to right, #eeeeee65 8%, #bbbbbb65 18%, #eeeeee65 33%);
+  background-size: 800px 104px;
+  height: 70px;
+  position: relative;
+}
+.animated-background-img{
+  min-height: 200px;
+}
+.animated-background{
+  height: auto;
+  min-height: 20px;
+}
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -800px 0
+  }
+  100% {
+    background-position: 800px 0
+  }
+}
+.background-masker {
+  background-color: #fff;
+  position: absolute;
 }

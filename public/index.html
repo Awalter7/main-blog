@@ -35,6 +35,14 @@
                     grid-template-columns: 150fr 300px auto 250px;
                 }
             }
+            #header span{
+                grid-area: s;
+                font-size:  15px;
+                text-align: left;
+                float: left;
+                padding: 10px;
+                color: rgb(131, 128, 128);
+                }
         </style>
     </head>
     <body>
@@ -102,10 +110,7 @@
                                     <a class="nav-link" href="javascript:void(0);">The Can and its Mysteries contents</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);">Using our work as a Resource (Citations)</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);">Documents</a>
+                                    <a class="nav-link" href="theCanAndItsContents.html">Using our work as a Resource (Citations)</a>
                                 </li>
                             </ul>
                             <svg class="ham ham6" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active');">
@@ -180,14 +185,14 @@
                     <h1 id = "widget-header">Most Liked</h1>
                     <div class="suggestion-likes" id ="suggestion-likes:0" onClick="reply_click(this.id)">
                         <a >
-                            <img id="suggestion-likes-image" src="https://picsum.photos/190/190?11" />
-                            <span id="suggestion-likes-title">This is an Example Title</span>
+                            <img class = "animated-background-img" id="suggestion-likes-image" src="" />
+                            <span class = "animated-background" id="suggestion-likes-title"></span>
                             <br>
-                            <span id="suggestion-likes-author">Austin Walter</span>
+                            <span class = "animated-background"  id="suggestion-likes-author"></span>
                             <br>
-                            <span id="suggestion-likes-date">01.16.2022</span>
+                            <span class = "animated-background"  id="suggestion-likes-date"></span>
                             <br>
-                            <span id="suggestion-likes-description">Example</span>
+                            <span class = "animated-background" id="suggestion-likes-description"></span>
                         </a>
                     </div>
 
@@ -195,11 +200,35 @@
                 <div class="myGallery">
                     <div class="item" id ="item:0" onClick="reply_click(this.id)">
                         <a >
-                            <img id="item-image" src="https://picsum.photos/190/190?11" />
-                            <span id="author">Austin Walter</span>
-                            <span id="date">01.16.2022</span>
-                            <span id="title">This is an Example Title</span>
-                            <span id="description">This is an Example description, and if you are seing this it means that the description of the article is missing, the article is missing, or the page is under development.</span>
+                            <img class = "animated-background-img" id="item-image" src="" />
+                            <span class = "animated-background" id="author"></span>
+                            <span class = "animated-background" id="date"></span>
+                            <span class = "animated-background" id="title"></span>
+                            <span class = "animated-background" id="description"></span>
+                            <ul id="item-tag-ul">
+                                <li id="item-CanItem"></li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="item" id ="placeholder-item-1" onClick="reply_click(this.id)">
+                        <a >
+                            <img class = "animated-background-img" id="item-image" src="" />
+                            <span class = "animated-background" id="author"></span>
+                            <span class = "animated-background" id="date"></span>
+                            <span class = "animated-background" id="title"></span>
+                            <span class = "animated-background" id="description"></span>
+                            <ul id="item-tag-ul">
+                                <li id="item-CanItem"></li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="item" id ="placeholder-item-2" onClick="reply_click(this.id)">
+                        <a >
+                            <img class = "animated-background-img" id="item-image" src="" />
+                            <span class = "animated-background" id="author"></span>
+                            <span class = "animated-background" id="date"></span>
+                            <span class = "animated-background" id="title"></span>
+                            <span class = "animated-background" id="description"></span>
                             <ul id="item-tag-ul">
                                 <li id="item-CanItem"></li>
                             </ul>
@@ -221,19 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "bookshelf-loader">
-                <div class="bookshelf_wrapper">
-                    <ul class="books_list">
-                      <li class="book_item first"></li>
-                      <li class="book_item second"></li>
-                      <li class="book_item third"></li>
-                      <li class="book_item fourth"></li>
-                      <li class="book_item fifth"></li>
-                      <li class="book_item sixth"></li>
-                    </ul>
-                    <div class="shelf"></div>
-                  </div>
-            </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
@@ -265,10 +282,15 @@
                     let clone = div[0].cloneNode(true);
                     if(i == 0){
                         document.querySelector("span#author").textContent = blogPosts[blogPosts.length-1].author;
+                        $("#author").removeClass("animated-background")
                         document.querySelector("span#date").textContent = blogPosts[blogPosts.length-1].postDate;
+                        $("#date").removeClass("animated-background")
                         document.querySelector("span#title").textContent = blogPosts[blogPosts.length-1].title;
+                        $("#title").removeClass("animated-background")
                         document.querySelector("span#description").textContent = blogPosts[blogPosts.length-1].description.slice(0, 200)+".....";
+                        $("#description").removeClass("animated-background")
                         document.querySelector("img#item-image").src = blogPosts[blogPosts.length-1].coverImage;
+                        $("#item-image").removeClass("animated-background")
                         document.querySelector("li#item-CanItem").innerHTML = blogPosts[blogPosts.length-1].canItem;
 
                         var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
@@ -315,6 +337,8 @@
                              console.log(tags[j])
                         }
                         
+                        $("#placeholder-item-1").hide();
+                        $("#placeholder-item-2").hide();
                         gallery[0].appendChild(clone);
 
                         document.getElementById(cloneId).style.height = "min-content";
@@ -333,11 +357,15 @@
                     let clone = div[0].cloneNode(true);
                     if(i == 0){
                         document.querySelector("span#suggestion-likes-author").textContent = blogPosts[blogPosts.length-1].author;
+                        $("#suggestion-likes-author").removeClass("animated-background")
                         document.querySelector("span#suggestion-likes-date").textContent = blogPosts[blogPosts.length-1].postDate;
+                        $("#suggestion-likes-date").removeClass("animated-background")
                         document.querySelector("span#suggestion-likes-title").textContent = blogPosts[blogPosts.length-1].title;
+                        $("#suggestion-likes-title").removeClass("animated-background")
                         document.querySelector("span#suggestion-likes-description").textContent = blogPosts[blogPosts.length - i-1].description.slice(0, 100)+".....";
+                        $("#suggestion-likes-description").removeClass("animated-background")
                         document.querySelector("img#suggestion-likes-image").src = blogPosts[blogPosts.length-1].coverImage;
-
+                        $("#suggestion-likes-image").removeClass("animated-background-img")
                         var tags = (blogPosts[blogPosts.length-1].tag1).split(",");
                         document.getElementById('suggestion-likes:0').style.height = "min-content";
 
