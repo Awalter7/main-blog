@@ -51,11 +51,9 @@ element.innerText = profile.getName();
 var imageUrl = "url('" + profile.getImageUrl() +"')";
 document.getElementById("user-icon").style.backgroundImage = imageUrl
 
-<<<<<<< HEAD
-=======
+
 $(".account-container").css("visibility", "visibile");
 $(".ham").css("visibility", "visibile");
->>>>>>> 8f1e6a21269b1189dfb7752d30df0065867b3034
 $(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
 
 }
