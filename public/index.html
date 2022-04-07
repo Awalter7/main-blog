@@ -126,6 +126,38 @@
                             </svg>
                         </div>
                     </nav>
+                    <div class = "nav-account">
+                        <div class = "nav-user-container">
+                            <div class = "user-icon">
+                            </div>
+                        </div>
+                        <div id = "nav-settings-container">
+                            <a href="">
+                            <i class="acnt-icon glyphicon glyphicon-user"></i>
+                            </a>
+                        </div>
+                        <div id = "nav-admin-container">
+                            <a>
+                            <i class="inbox-icon glyphicon glyphicon-inbox"></i>
+                            </a>
+                        </div>
+                        <div id = "nav-upload-container">
+                            <a href="">
+                            <i class="Upload-icon glyphicon glyphicon-upload"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="nav-account-info" aria-width="300" aria-height="400">
+                        <div id = "nav-user-wrapper">
+                            <div class = "nav-user-container" id = "user-container-dropdown" style="float:left; margin-left: 25px; width:50px; height: 50px;">
+                                <div class = "user-icon" id = "user-icon-dropdown" style="width:50px; height:50px;"></div>
+                            </div>
+                            <div id = "username-dropdown">testing</div>
+                        </div>
+                        <div id = "nav-userType-wrapper">
+                            User Type: <span id = "nav-user-type">Admin</span>
+                        </div>
+                    </div>
                 </div>
                 <div id = "search-br" class="no-stick">
                     <form class="d-flex input-group srch">
@@ -134,7 +166,6 @@
                             <span style="color: rgb(131, 127, 127)" class="glyphicon glyphicon-search icon-search"></span>
                         </span> 
                     </form>
-                    
                     <div class="google g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="35"  data-theme="dark" style="position: relative; float: right; margin-right: 50px; margin-top: -75px; float: right;"></div>
                 </div>  
             </div>
@@ -146,31 +177,6 @@
                         <span><br><i>Searching For:</i></span>
                     </div>
                 </div>
-                <aside class = "account-container"  id = "account-container-animation">
-                    <div id = account-user-container>
-                        <div id = "user-icon">
-                        </div>
-                        <span id="username">Austin Walter</span>
-                    </div>
-                    <div id = "account-settings-container">
-                        <a>
-                        <i id="sett-icon" class="material-icons">settings</i>
-                        <span id="settings">Settings</span>
-                        </a>
-                    </div>
-                    <div id = "account-upload-container">
-                        <a href="">
-                        <i id="Upload-icon" class="glyphicon glyphicon-upload"></i>
-                        <span id="upload">Upload</span>
-                        </a>
-                    </div>
-                    <div id = "account-admin-container">
-                        <a href="">
-                        <i id="admin-icon" class="fa fa-file-o"></i>
-                        <span id="admin">Admin</span>
-                        </a>
-                    </div>
-                </aside>
                 <div id = "grid-text-box">
                     <span id = "text-descrip-grid"></span>
                 </div>

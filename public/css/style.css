@@ -69,6 +69,12 @@ input{
     grid-template: "slider" "gallery" "side";
     column-gap: 10px;
 }
+.nav-account{
+  position: relative;
+  top: -95px;
+  margin-right: 50px;
+
+}
 .navbar-wrapper{
     justify-content: center;
     width: 100%;
@@ -168,6 +174,25 @@ img {vertical-align: middle;}
   top: 0;
 }
 
+#username-dropdown{
+  position: relative;
+  top: 25px;
+  float: left;
+}
+#nav-user-wrapper, #nav-userType-wrapper{
+  border-bottom: 1px solid rgba(128, 125, 125, 0.61);
+  margin: 10px;
+  margin-top: 0px;
+  
+  width: auto;
+}
+#nav-userType-wrapper{
+  text-align: center;
+  height: 30px;
+}
+#nav-user-wrapper{
+  height: 70px;
+}
 .dot {
   height: 15px;
   width: 15px;
@@ -214,57 +239,41 @@ body{
   text-rendering: optimizelegibility;
   background-color: #111111;
 }
-#user-icon {
-  width: 70px;
+.user-icon {
+  float: right;
   position: relative;
-  top: 15px;
-  left: 40px;
-  height: 70px;
+  width: 45px;
+  height: 45px;
   background-image: url("https://th.bing.com/th/id/R.653f93c3cb58cb7f21b6a721ebdbec19?rik=dDXT3D3c%2bSRfNg&riu=http%3a%2f%2fwww.repol.copl.ulaval.ca%2fwp-content%2fuploads%2f2019%2f01%2fdefault-user-icon.jpg&ehk=5SV6bh5JXp3uM9swhors3LcaN1Iskv0xBV%2f7Hnq40s4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1");
   background-size:contain;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
 }
-#username{
-  position: relative;
+
+#nav-settings-container,#nav-upload-container, #nav-admin-container,.nav-user-container{
   color: rgb(182, 182, 182);
-  top: 20px;
-}
-#account-user-container{
-  text-align: center;
   position: relative;
-  top: 50px;
-  height: 120px;
-}
-#account-settings-container,#account-upload-container, #account-admin-container{
-  color: rgb(182, 182, 182);
-  text-align: center;
-  position: relative;
-  top: 50px;
-  height: 50px;
+  height: min-content;
+  width: min-content;
+  top: 25px;
+  margin-right: 10px;
+  float: right;
   overflow: hidden;
 }
-#sett-icon, #admin-icon, #Upload-icon{
+#user-container-dropdown{
+  top: 10px;
+}
+
+#user-icon-dropdown{
+}
+
+.acnt-icon, .inbox-icon, .Upload-icon{
+  margin-top:  10px;
   font-size: 20px;
-  position: absolute;
-  top: 12px;
-  margin-left: -50px;
+  position: relative
 }
-#admin-icon{
-  top: 13px;
-  font-size: 15px;
-  margin-left: -47px;
-  font-weight: 800;
-}
-#account-settings-container span, #account-upload-container span, #account-admin-container span{
-  position: absolute;
-  margin-left: -20px;
-  top: 14px;
-}
-#account-upload-container i{
-  font-size: 20px;
-}
+
 .header-container{
   grid-area: slider;
   height: fit-content;
@@ -858,16 +867,6 @@ nav{
   padding: 20px;
   height: 100%;
   width: auto;
-}
-.account-container{
-    background-color: rgb(37, 36, 36);
-    position: relative;
-    top: 1100px;
-    visibility: hidden;
-    grid-area: account ;
-    z-index: 41;
-    width: 150px;
-    height: 107.9%;
 }
 
 .ham.active{
@@ -1609,4 +1608,103 @@ p{
 .background-masker {
   background-color: #fff;
   position: absolute;
+}
+#nav-account-info{
+  display:block;
+  visibility: hidden;
+  color: rgb(182, 182, 182);
+  width:0px;
+  height:0px;
+  box-shadow:0 0 3px rgba(0,0,0,0.2);
+  background-color: rgb(37, 36, 36);
+  -webkit-transition:all .4s ease-in-out;
+  animation-name: closeAcntAnimation;
+  -webkit-animation-name: closeAcntAnimation;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  position:absolute;
+  top:260px;
+  left:90%;
+  transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  border: 1px solid rgba(128, 125, 125, 0.61);
+}
+@-webkit-keyframes openAcntAnimation{
+  0%{
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+  50%{
+    width:300px;
+    height:1px;
+     overflow:hidden;
+  }
+  100%{
+    height:300px;
+    width:300px;
+     overflow:auto;
+  }
+}
+@keyframes  openAcntAnimation{
+  0%{
+    top: 100px;
+    width:1px;
+    height:1px;
+     overflow:hidden;
+  }
+  50%{
+    top: 110px;
+    width:300px;
+    height:1px;
+     overflow:hidden;
+  }
+  100%{
+    top: 260px;
+    height:300px;
+    width:300px;
+     overflow:auto;
+  }
+}
+@keyframes closeAcntAnimation{
+  0%{
+    top: 260px;
+    width: 300px;
+    height:300px;
+     overflow:hidden;
+  }
+  50%{
+    top: 110px;
+    width:300px;
+    height:1px;
+     overflow:hidden;
+  }
+  100%{
+    top: 100px;
+    height:1px;
+    width:1px;
+     overflow:auto;
+  }
+}
+@-webkit-keyframes closeAcntAnimation{
+  0%{
+    top: 260px;
+    width: 300px;
+    height:300px;
+     overflow:hidden;
+  }
+  50%{
+    top: 110px;
+    width:300px;
+    height:1px;
+     overflow:hidden;
+  }
+  100%{
+    top: 100px;
+    height:1px;
+    width:1px;
+     overflow:auto;
+  }
 }
