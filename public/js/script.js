@@ -1,8 +1,6 @@
 
 
 $(document).ready(function() {
-    $(".body-wrapper").css("grid-template-columns", "100px auto 250px");
-    $("#home-body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
     const loaderInterval = setInterval(function(){
         $(".bookshelf-loader").fadeToggle();
         clearInterval(loaderInterval);
@@ -33,28 +31,28 @@ function onLoadAnimation(x){
 
 
 function onFailure(error) {
-console.log(error);
+    console.log(error);
 }
 function onSignIn(googleUser) {
-// Useful data for your client-side scripts:
+    // Useful data for your client-side scripts:
 
-var profile = googleUser.getBasicProfile();
+    var profile = googleUser.getBasicProfile();
 
-// The ID token you need to pass to your backend:
-var id_token = googleUser.getAuthResponse().id_token;
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
 
-var profile = googleUser.getBasicProfile()
+    var profile = googleUser.getBasicProfile()
 
-var element = document.querySelector('#username')
-element.innerText = profile.getName();
+    var element = document.querySelector('#username')
+    element.innerText = profile.getName();
 
-var imageUrl = "url('" + profile.getImageUrl() +"')";
-document.getElementById("user-icon").style.backgroundImage = imageUrl
+    var imageUrl = "url('" + profile.getImageUrl() +"')";
+    document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 
-$(".account-container").css("visibility", "visibile");
-$(".ham").css("visibility", "visibile");
-$(".body-wrapper").css("grid-template-columns", "100px 300px auto 250px");
+    $(".account-container").css("visibility", "visibile");
+    $(".ham").css("visibility", "visibile");
+    $(".body-wrapper").css("grid-template-columns", "0px 300px auto 250px");
 
 }
 let slider = document.querySelector("#slider");
@@ -181,10 +179,9 @@ function checkUserCookie() {
     let username = getUserCookie("username");
     if (username != "") {
         setTimeout(onLoadAnimation(0), 3000)
-
+        console.lof("here")
     } else {
         setTimeout(onLoadAnimation(2), 3000)
-        setTimeout(preLoaderFadeout, 5000)
         username = Math.random().toString(36).substr(2, 9);
         if (username != "" && username != null) {
             setUserCookie("username", username, 365);
