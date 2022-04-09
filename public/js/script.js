@@ -50,8 +50,7 @@ function onSignIn(googleUser) {
     document.getElementById("user-icon").style.backgroundImage = imageUrl
 
 
-    $(".account-container").css("visibility", "visibile");
-    $(".ham").css("visibility", "visibile");
+
     $(".body-wrapper").css("grid-template-columns", "0px 300px auto 250px");
 
 }
@@ -97,13 +96,8 @@ function test(){
 $(document).ready(function(){
     setTimeout(function(){ test(); });
 });
-$(window).on('resize', function(){
-    setTimeout(function(){ test(); }, 500);
-});
-$(".navbar-toggler").click(function(){
-    $(".navbar-collapse").slideToggle(300);
-    setTimeout(function(){ test(); });
-});
+
+
 document.querySelector("#nav-settings-container").addEventListener("click", function(event){
     
     if ($('#nav-account-info').css("animation-name") == 'closeAcntAnimation') {
@@ -179,7 +173,7 @@ function checkUserCookie() {
     let username = getUserCookie("username");
     if (username != "") {
         setTimeout(onLoadAnimation(0), 3000)
-        console.lof("here")
+        console.log("here")
     } else {
         setTimeout(onLoadAnimation(2), 3000)
         username = Math.random().toString(36).substr(2, 9);
@@ -190,3 +184,27 @@ function checkUserCookie() {
 }
 
 
+window.addEventListener('resize', toggleHam);
+
+function toggleHam(){
+	if(window.innerWidth < 1350){
+		console.log("-------------------------")
+		$(".ham").css("visibility", "visible")
+		$(".no-stick").css("top", "0px")
+		$(".body-wrapper").css("top", "-100px");
+		$(".myGallery").css("top", "50px");
+		$(".navbar-wrapper").css("visibility", "hidden");
+	}else{
+		$(".ham").css("visibility", "hidden")
+		$(".no-stick").css("top", "50px")
+		$(".body-wrapper").css("top", "0px");
+		
+		$(".google").css("visibility", "visible");
+		$(".navbar-wrapper").css("visibility", "visible")
+	}
+	if(window.innerWidth < 1050){
+		$("#signin-large").css("visibility", "hidden")
+	}else{
+		$("#signin-large").css("visibility", "visible")
+	}
+}
