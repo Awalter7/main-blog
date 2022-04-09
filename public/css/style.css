@@ -71,7 +71,7 @@ input{
     display: grid;
     height:fit-content;
     overflow: hidden;
-    grid-template: "slider" "gallery" "side";
+  
     column-gap: 10px;
 }
 .nav-account{
@@ -702,16 +702,7 @@ body{
   }
 
 } 
-@media(max-width: 992px){
-    .body-wrapper{
-        grid-template:  
-        "account search blank"
-        "account slider  right"
-        "account center  right"
-        "footer footer footer";
-    }
-    
-}
+
 @media(min-width: 900px){
   
 	.navbar-expand-custom {
@@ -737,15 +728,6 @@ body{
     width: 400px;
     height: auto;
   }
-  .body-wrapper{
-    grid-template:  
-        "account search search" 
-        "account slider right"
-        "account center  right"
-        "footer footer footer";
-    grid-template-rows: auto 400px auto auto ;
-    grid-template-columns: .5fr auto 300px;
-}
 
 .myGallery .description{
   left: 9px;
@@ -788,6 +770,72 @@ body{
       visibility: visible;
     }
   }
+  @media(max-width: 1250px) {
+    .archives{
+      visibility: hidden;
+    }
+    .body-wrapper{
+      grid-template:  
+          "search search search" 
+          "left slider right"
+          "left center  right"
+          "footer footer footer";
+      grid-template-rows: 0px 350px auto auto ;
+      grid-template-columns:  0px auto 300px;
+  }
+    .suggestions{
+      border-left:1px solid rgba(128, 125, 125, 0.61);
+      grid-area: right;
+      border-right: none;
+    }
+    .myGallery{
+      padding:100px;
+    }
+  }
+  @media(max-width: 1170px) {
+    .archives{
+      visibility: hidden;
+    }
+    .body-wrapper{
+      grid-template:  
+          "search search search" 
+          "left slider right"
+          "left center  right"
+          "footer footer footer";
+      grid-template-rows: 0px 350px auto auto ;
+      grid-template-columns:  0px auto 0px;
+  }
+    .suggestions{
+      visibility: hidden;
+    }
+    .myGallery{
+      row-gap: 10px;
+      padding:200px;
+      padding-top: 0px;
+    }
+    .myGallery .item{
+      border-radius: 0px;
+      border-bottom:1px solid rgba(128, 125, 125, 0.61);
+    }
+    .main-wrapper{
+      height: min-content;
+    }
+  }
+
+@media(max-width: 900px) {
+  .myGallery{
+    row-gap: 10px;
+    padding:0px;
+    padding-top: 0px;
+  }
+}
+@media(max-width: 1000px) {
+  .myGallery{
+    row-gap: 10px;
+    padding:100px;
+    padding-top: 0px;
+  }
+}
   @media(max-width: 1350px) {
       .myGallery .item {
         width: 800px;
