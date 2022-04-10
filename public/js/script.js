@@ -207,4 +207,5 @@ function toggleHam(){
 	}else{
 		$("#signin-large").css("visibility", "visible")
 	}
+
 }
