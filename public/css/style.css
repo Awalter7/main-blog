@@ -915,7 +915,7 @@ h3{
 }
 @media(max-width: 600px) {
   .header-container{
-    height: auto;
+    width: 550px;
   }
   #header{
     top: 50px;
@@ -948,6 +948,22 @@ h3{
   }
   aside{
     height: 160vh;
+  }
+}
+@media(max-width: 500px) {
+  .myGallery .item{
+    zoom: 70%;
+  }
+  .header-container{
+    width: 450px;
+  }
+}
+@media(max-width: 450px) {
+  .myGallery .item{
+    zoom: 60%;
+  }
+  .header-container{
+    width: 400px;
   }
 }
 
