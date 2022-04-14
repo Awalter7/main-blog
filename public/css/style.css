@@ -21,6 +21,7 @@ body{
   overflow-x: hidden;
 }
 .main-wrapper{
+  position: absolute;
   width:100%;
 }
 input{
@@ -69,7 +70,7 @@ input{
     margin: auto;
     position: relative;
     background-color: #111111;
-    top: -10px;
+    margin-top:  -60px;
     width: 100%;
     display: grid;
     height:fit-content;
@@ -539,7 +540,7 @@ body{
     font-weight: 600;
     margin-top: 15px;
     position: relative;
-    z-index: 1;
+    z-index: 2000;
     bottom: 0;
     float: left;
     text-align: left;
@@ -740,8 +741,34 @@ body{
 .myGallery .description{
   left: 9px;
 }
-
-
+aside{
+  padding-top: 100px;
+  position: absolute;
+  top: 0px;
+  width:200px;
+  
+  float: left;
+  height: 100vh;
+  background-color: rgb(37, 36, 36);
+  
+}
+aside .nav-item{
+  position: relative;
+  padding-bottom: 20px;
+  left: -20px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(128, 125, 125, 0.329);
+  width: 100%;
+}
+aside li{
+  text-align: center;
+  border-bottom: #2ecc71;
+  list-style: none;
+}
+.aside-account{
+  position: relative;
+  top: -50px;
+}
 
   }
   @media(min-width: 1100px) {
@@ -839,80 +866,92 @@ h3{
     padding:0px;
     padding-top: 0px;
   }
-}
-@media(max-width: 1000px) {
-  .myGallery{
-    row-gap: 10px;
-    padding:100px;
-    padding-top: 0px;
-  }
-}
-@media(max-width: 1000px) {
-  .myGallery{
-    row-gap: 10px;
-    padding:100px;
-    padding-top: 0px;
-  }
-}
-@media(max-width: 360px) {
-  .main-wrapper{
-    position: relative;
-    width:130vw;
-    left:0px;
-  }
-  .header-container{
-    position: relative;
-    width: 100%;
+  aside{
+    padding-top: 100px;
+    position: absolute;
+    top: 0px;
+    width:200px;
+    
+    float: left;
     height: 100vh;
-    top:50px;
+    background-color: rgb(37, 36, 36);
     
   }
-  h3{
+  aside .nav-item{
     position: relative;
-    left: 10px;
-  }
-  .body-wrapper{
-    grid-template-rows:  0px 110vh auto auto;
-  }
-  #header{
-    left: 25px;
-    top: 150px; 
-    grid-template-rows:  50px max-content 0px;
-    padding: 0px;
-    height: 100vh;
-  }
-  #header p{
-    margin-top: 40px;
-    padding: 0px;
-    width: 100vw;
-  }  
-  #header span{
+    padding-bottom: 20px;
+    left: -20px;
     margin-top: 20px;
+    border-bottom: 1px solid rgba(128, 125, 125, 0.329);
+    width: 100%;
   }
-  #header span i{
-    visibility: hidden;
+  aside li{
+    text-align: center;
+    border-bottom: #2ecc71;
+    list-style: none;
   }
-  .search-bar{
+  .aside-account{
     position: relative;
-    max-width: 50vw;
-    left: calc(50vw - 25vw);
-    align-self: center;
-  }
-  .myGallery {
-    width: 100%;
-    padding: 0px;
-  }
-  .myGallery .item{
-    width: 100%;
-    padding: 0px;
-  }
-  .myGallery .item img{
-    min-width: 200px;
-    max-height: auto;
-    padding: 0px;
+    top: -50px;
   }
 }
-
+@media(max-width: 1000px) {
+  .myGallery{
+    row-gap: 10px;
+    padding:100px;
+    padding-top: 0px;
+  }
+}
+@media(max-width: 1000px) {
+  .myGallery{
+    row-gap: 10px;
+    padding:100px;
+    padding-top: 0px;
+  }
+  .myGallery .item #author{
+    position: relative;
+    top: 0px;
+    left: 0px;  
+  }
+}
+@media(max-width: 400px) {
+  .header-container{
+    height: auto;
+  }
+  #header{
+    top: 50px;
+    padding: 0px;
+  }
+  .body-wrapper{
+    grid-template-rows: 0px 400px auto auto ;
+  }
+  .myGallery{
+    width: 0px;
+    left: -100px;
+  }
+  .myGallery .item{
+    width: 100vw;
+  }
+  .footer-wrapper{
+    visibility: hidden;
+  }
+  #search-bar-group{
+   width: 50%;
+   left: -10px;
+  }
+  .archives{
+    visibility: hidden;
+  }
+  .suggestions{
+    visibility: hidden;
+  }
+  .main-wrapper{
+    overflow-x: hidden;
+  }
+  aside{
+    height: 160vh;
+  }
+}
 
 
 

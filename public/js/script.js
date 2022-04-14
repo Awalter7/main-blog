@@ -1,6 +1,7 @@
 
 
 $(document).ready(function() {
+    togglePosition()
     const loaderInterval = setInterval(function(){
         $(".bookshelf-loader").fadeToggle();
         clearInterval(loaderInterval);
@@ -182,30 +183,46 @@ function checkUserCookie() {
         }
     }
 }
+$(".ham").on("click", toggleAsside);
 
+function toggleAsside(){
+    if($(".main-wrapper").css("left") == "200px"){
+        $(".main-wrapper").animate({left: "0px"}, 500)
+        $("html").css("overflow-y", "scroll")
+    }else{
+        $(".main-wrapper").animate({left: "200px"}, 500)
+        $("html").css("overflow-y", "hidden")
+    }
+    
+}
 
-window.addEventListener('resize', toggleHam);
+window.addEventListener('resize', togglePosition);
 
-function toggleHam(){
+function togglePosition(){
 	if(window.innerWidth < 1350){
 		console.log("-------------------------")
 		$(".ham").css("visibility", "visible")
 		$(".no-stick").css("top", "0px")
-		$(".body-wrapper").css("top", "-100px");
+		$(".body-wrapper").css("top", "-110px");
 		$(".myGallery").css("top", "50px");
 		$(".navbar-wrapper").css("visibility", "hidden");
 	}else{
 		$(".ham").css("visibility", "hidden")
+        if($(".main-wrapper").css("left") == "200px"){
+            toggleAsside()
+        }
 		$(".no-stick").css("top", "50px")
-		$(".body-wrapper").css("top", "0px");
-		
+		$(".body-wrapper").css("top", "-20px");
 		$(".google").css("visibility", "visible");
 		$(".navbar-wrapper").css("visibility", "visible")
 	}
+    if(window.innerWidth < 1130){
+        $(".body-wrapper").css("top", "-120px");
+    }
 	if(window.innerWidth < 1050){
 		$("#signin-large").css("visibility", "hidden")
 	}else{
 		$("#signin-large").css("visibility", "visible")
 	}
-
+    
 }
