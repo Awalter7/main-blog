@@ -910,11 +910,10 @@ h3{
   }
   .myGallery .item #author{
     position: relative;
-    top: 0px;
-    left: 0px;  
+    top: 0px; 
   }
 }
-@media(max-width: 400px) {
+@media(max-width: 600px) {
   .header-container{
     height: auto;
   }
@@ -926,11 +925,10 @@ h3{
     grid-template-rows: 0px 400px auto auto ;
   }
   .myGallery{
-    width: 0px;
     left: -100px;
   }
   .myGallery .item{
-    width: 100vw;
+    zoom: 80%;
   }
   .footer-wrapper{
     visibility: hidden;
