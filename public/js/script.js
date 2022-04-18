@@ -7,7 +7,7 @@ $(document).ready(function() {
         console.log("here")
     }, 1000);
 
-    
+ 
 });
 function toggleLoader(){
     $(".bookshelf-loader").fadeToggle();
@@ -171,13 +171,22 @@ function checkUserCookie() {
         setTimeout(onLoadAnimation(0), 3000)
         console.log("here")
     } else {
-        setTimeout(onLoadAnimation(2), 3000)
-        username = Math.random().toString(36).substr(2, 9);
-        if (username != "" && username != null) {
-            setUserCookie("username", username, 365);
-        }
+        $(".cookiePop-container").css("visibility", "visible")
+
     }
+    
 }
+
+function cookieAccepted(){
+    let username;
+    setTimeout(onLoadAnimation(2), 3000)
+    username = Math.random().toString(36).substr(2, 9);
+    if (username != "" && username != null) {
+        setUserCookie("username", username, 365);
+    }
+    $(".cookiePop-container").fadeOut();
+}
+
 $(".ham").on("click", toggleAsside);
 
 function toggleAsside(){
@@ -239,7 +248,6 @@ function togglePosition(){
     right = $(window).width() - left - 300;
     $("#search-bar-tag-scroller").css("width", right)
     $(".back-right-tag-scroller").css("left",  right - (left - 800))
-    console.log($(".back-right-tag-scroller").css("left"))
 }
 
 

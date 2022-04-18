@@ -358,6 +358,10 @@ body{
   padding-left: 30px;
   color: rgb(182, 182, 182);
 }
+#header-title{
+  font-size: 60px;
+  color:#aaa;
+}
 #article-header-title{
   font-size: 50px;
   text-align: left;
@@ -1954,4 +1958,36 @@ p{
     width:1px;
      overflow:auto;
   }
+}
+.cookie-popup{
+  position: relative;
+  width: 50%;
+  font-weight: 500;
+  background-color: rgb(37, 36, 36);
+  top: 50%;
+  padding: 12px;
+  padding-left: none;
+  margin: 0 auto;
+  color: black;
+  color: rgba(255, 255, 255, 0.479);
+}
+.cookie-popup span a{
+  color:#1676cf;
+  font-weight: 900;
+}
+.cookie-popup button{
+  float: right;
+  background-color: #11111100;
+  border: none;
+  color:rgb(240, 102, 23)
+}
+.cookiePop-container{
+  visibility: hidden;
+  position: fixed;
+  background-color: rgba(37, 36, 36, 0.24);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  z-index: 100;
 }
