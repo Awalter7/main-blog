@@ -324,6 +324,7 @@
             });
         
             let blogPostsTags = [];
+            let Tags = [];
             let blogPostsInit = [];
         
             $(document).ready(function () {
@@ -336,35 +337,44 @@
                 for(let i = 0; i < blogPostsTags.length; i++){
                     
                     let ul = document.getElementById('Search-bar-ul');
-                                    
+                    let canItem =  blogPostsTags[i].canItem;   
+                    if(!Tags.includes(canItem)){
+                        let li = document.createElement("li");
+                        li.id = "search-bar-tag";
+                        let a = document.createElement("a");
 
+                        var aId = blogPostsTags[i].canItem.split(" ").join("-");
+                        a.id = aId;
+                        li.appendChild(a);
+                        a.innerHTML = blogPostsTags[i].canItem;
 
-                    let li = document.createElement("li");
-                    li.id = "search-bar-tag";
-                    let a = document.createElement("a");
+                        Tags.push(blogPostsTags[i].canItem);
+                
+                        document.getElementById("search-bar-ul").appendChild(li);
+                        a.setAttribute("onclick", "reply_click_tag(this.id)")
 
-                    var aId = blogPostsTags[i].canItem.split(" ").join("-");
-                    a.id = aId;
-                    li.appendChild(a);
-                    a.innerHTML = blogPostsTags[i].canItem;
-            
-                    document.getElementById("search-bar-ul").appendChild(li);
-                    a.setAttribute("onclick", "reply_click_tag(this.id)")
+                    }
 
                     var tags = (blogPostsTags[i].tag1).split(",");
-
-                    console.log(tags)
+                    
+                    
                     for(var j = 0; j < tags.length; j++){
-                        let li = document.createElement("li")
-                        li.id = "search-bar-tag"
-                        let a = document.createElement("a");
-                        aId =tags[j].split(" ").join("-");
-                        a.id = aId;
-                        
-                        li.appendChild(a);
-                        a.setAttribute("onclick", "reply_click_tag(this.id)")
-                        a.innerHTML = tags[j];
-                        document.getElementById("search-bar-ul").appendChild(li);
+                        tag = tags[j]
+                        if(!Tags.includes(tag)){
+                            let li = document.createElement("li")
+                            li.id = "search-bar-tag"
+                            let a = document.createElement("a");
+                            aId =tag.split(" ").join("-");
+                            a.id = aId;
+                            
+                            li.appendChild(a);
+                            a.setAttribute("onclick", "reply_click_tag(this.id)")
+                            a.innerHTML = tag;
+
+                            Tags.push(tag)
+
+                            document.getElementById("search-bar-ul").appendChild(li);
+                        }
                     }
                 }
             });
