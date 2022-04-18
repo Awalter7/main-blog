@@ -36,10 +36,46 @@ input{
     border: 1px solid rgb(71, 71, 71);
     background-color: rgba(255, 255, 255, 0.096);
 }
-.search-bar{
+#search-bar{
+}
+#search-bar-tag-scroller{
+  padding: 6px;
+  position: relative;
+  display: inline-block;
+  overflow: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: scroll;
+  z-index: 40;
+  top: -77px;
+  width: 50vw;
+  left: 400px;
+  height: 45px;
+}
+#search-bar-tag-scroller::-webkit-scrollbar { 
+  display: none;  
+  }
+.back-left-tag-scroller{
+  position: absolute;
+  display: flex;
+  background-image: linear-gradient(to left, transparent, rgb(37, 36, 36));
+  z-index: 50;
+  left: 450px;
+  width: 100px;
+  padding-top: 15px;
+  height: 40px;
+}
+.back-right-tag-scroller{
+  position: absolute;
+  display: flex;
+  background-image: linear-gradient(to right, transparent, rgb(37, 36, 36));
+  z-index: 50;
+  width: 100px;
+  padding-top: 15px;
+  padding-left: 90px;
+  height: 40px;
 }
 #search-bar-group{
-  margin: 0 auto;
+  padding-left: 200px;
 }
 .input-group-text{
     position: relative;
@@ -142,7 +178,6 @@ input{
   z-index: 41;
   border-top: 1px solid rgb(71, 71, 71);
   background-color: rgb(37, 36, 36);
-  
   width: 100%;
   height: 50px;
   grid-area: search;
@@ -470,21 +505,43 @@ body{
     margin-top: 20px;
     font-size: 1rem;
   }
-  .myGallery .item ul{
+  .myGallery .item ul, #search-bar-ul{
     list-style: none;
   }  
-
-.myGallery .item ul li{
-    position: relative;
+  #search-bar-ul{
+    display: inline;
+    position: absolute;
+    width: max-content
+  }
+.myGallery .item ul li, #search-bar-tag{
     padding: 5px;
-    right: 40px;
-    color: rgb(153, 151, 151);
     box-shadow: 4px 2px 65px -4px rgba(0, 0, 0, 0.829);
     -webkit-box-shadow: 4px 2px 65px -4px rgba(0, 0, 0, 0.87);
     -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
-    border: 1px solid rgb(71, 71, 71);
+    
     border-radius: 10px;
+  }
+  #search-bar-tag a{
+    text-decoration: none;
+    color: rgb(37, 36, 36);
+  }
+  #search-bar-tag{
+    left: -10px;
+    margin-left: 5px;
+    background-color: rgb(153, 151, 151);
+    color: rgb(71, 71, 71);
+    top: 5px;
+    display: inline;
+    width: max-content;
+    position: relative;
+
+  }
+  .myGallery .item ul li{
+    color: rgb(153, 151, 151);
+    border: 1px solid rgb(71, 71, 71);
     float: left;
+    right: 40px;
+    position: relative;
   }
   .myGallery img {
     transition: all .2s ease-in-out; 
@@ -492,11 +549,6 @@ body{
     -webkit-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 2px 65px -4px rgba(0,0,0,0.75);
     width: 100px;
-    height: 
-    
-
-
-
     
   }
   .myGallery .item {
@@ -930,6 +982,7 @@ h3{
   .myGallery .item{
     zoom: 80%;
   }
+ 
   .footer-wrapper{
     visibility: hidden;
   }
@@ -1139,7 +1192,7 @@ article{
   background-color: #111111;
   color: rgb(182, 182, 182);
   position: relative;
-  top: -500px;
+  top: 0px;
   height: 100%;
   z-index: 1;
   display: grid;

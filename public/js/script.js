@@ -1,10 +1,10 @@
 
-
 $(document).ready(function() {
     togglePosition()
     const loaderInterval = setInterval(function(){
         $(".bookshelf-loader").fadeToggle();
         clearInterval(loaderInterval);
+        console.log("here")
     }, 1000);
 
     
@@ -100,7 +100,8 @@ $(document).ready(function(){
 
 
 document.querySelector("#nav-settings-container").addEventListener("click", function(event){
-    
+   
+
     if ($('#nav-account-info').css("animation-name") == 'closeAcntAnimation') {
         $('#nav-account-info').css("animation-name", "openAcntAnimation");
         
@@ -108,7 +109,6 @@ document.querySelector("#nav-settings-container").addEventListener("click", func
         $('#nav-account-info').css("width", "300px");
         $('#nav-account-info').css("height", "300px");
         $("#nav-account-info").css("visibility","visible");
-        
     }else{
         $('#nav-account-info').css("animation-name", "closeAcntAnimation");
         $('#nav-account-info').css("-webkit-animation-name", "closeAcntAnimation");
@@ -119,9 +119,6 @@ document.querySelector("#nav-settings-container").addEventListener("click", func
             clearInterval(hiderInterval);
         }, 1000);
     }
-
-        
-
     event.preventDefault();
 });
 document.querySelector(".fa").addEventListener("click", function(event){
@@ -134,8 +131,6 @@ document.querySelector("#nav-upload-container").addEventListener("click", functi
     $('.upload-container').fadeToggle();
     event.preventDefault();
 });
-
-
 
 jQuery(document).ready(function($){
     checkUserCookie();
@@ -211,6 +206,7 @@ function togglePosition(){
         if($(".main-wrapper").css("left") == "200px"){
             toggleAsside()
         }
+
 		$(".no-stick").css("top", "50px")
 		$(".body-wrapper").css("top", "-20px");
 		$(".google").css("visibility", "visible");
@@ -219,10 +215,60 @@ function togglePosition(){
     if(window.innerWidth < 1130){
         $(".body-wrapper").css("top", "-120px");
     }
-	if(window.innerWidth < 1050){
-		$("#signin-large").css("visibility", "hidden")
+    if(window.innerWidth < 1250){
+        $("#search-bar-tag-scroller").css("visibility", "hidden")
+        $(".back-left-tag-scroller").css("visibility", "hidden")
+        $(".back-right-tag-scroller").css("visibility", "hidden")
+        $("#search-bar-group").css("margin", "0 auto")
+        $("#search-bar-group").css("padding-left", "0")
+    }else{
+        $("#search-bar-tag-scroller").css("visibility", "visible")
+        $(".back-left-tag-scroller").css("visibility", "visible")
+        $(".back-right-tag-scroller").css("visibility", "visible")
+        $("#search-bar-group").css("margin", "0")
+        $("#search-bar-group").css("padding-left", "200px")
+    }
+	if(window.innerWidth < 1350){
+		$("#signin-large").css("visibility", "hidden");
 	}else{
 		$("#signin-large").css("visibility", "visible")
 	}
-    
+    var ele = document.getElementById("search-bar-tag-scroller")
+    var of = $(ele).offset(), // this will return the left and top
+    left = of.left, // this will return left 
+    right = $(window).width() - left - 300;
+    $("#search-bar-tag-scroller").css("width", right)
+    $(".back-right-tag-scroller").css("left",  right - (left - 800))
+    console.log($(".back-right-tag-scroller").css("left"))
 }
+
+
+$(".back-right-tag-scroller").on("click", function () {
+    console.log("here");
+    var container = document.getElementById('search-bar-tag-scroller');
+    sideScroll(container,'right',25,100,10);
+    
+});
+
+$(".back-left-tag-scroller").on("click", function () {
+    console.log("here");
+    var container = document.getElementById('search-bar-tag-scroller');
+    sideScroll(container,'left',25,100,10);
+    
+});
+
+function sideScroll(element,direction,speed,distance,step){
+    scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+
