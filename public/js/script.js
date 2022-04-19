@@ -1,17 +1,17 @@
 
 $(document).ready(function() {
+    
     togglePosition()
-    const loaderInterval = setInterval(function(){
-        $(".bookshelf-loader").fadeToggle();
-        clearInterval(loaderInterval);
-        console.log("here")
-    }, 1000);
-
- 
+    var ele = document.getElementById("search-bar-tag-scroller")
+    var of = $(ele).offset() // this will return the left and top
+    console.log(of);
+    left = of.left, // this will return left 
+    console.log(left);
+    right = $(window).width() - left - 300;
+    console.log(right);
+    $("#search-bar-tag-scroller").css("width", right)
+    $(".back-right-tag-scroller").css("left",  right - (left - 800))
 });
-function toggleLoader(){
-    $(".bookshelf-loader").fadeToggle();
-}
 
 function onLoadAnimation(x){
     var searchBr = $('#search-br').last();
@@ -29,7 +29,9 @@ function onLoadAnimation(x){
     tween.play();
 }
 
-
+$(".back-article").on("click", function(){
+    $("article").css("visibility", "hidden");
+});
 
 function onFailure(error) {
     console.log(error);
@@ -98,7 +100,9 @@ $(document).ready(function(){
     setTimeout(function(){ test(); });
 });
 
-
+$("#nav-upload-container").on("click", function(){
+    $(".upload-container").css("visibility", "visible")
+});
 document.querySelector("#nav-settings-container").addEventListener("click", function(event){
    
 
